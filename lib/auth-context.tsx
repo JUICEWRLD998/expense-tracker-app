@@ -23,52 +23,62 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
-  // Load user from localStorage on mount
+  // Load user and token from localStorage on mount
   useEffect(() => {
+    const token = localStorage.getItem("auth_token")
     const storedUser = localStorage.getItem("auth_user")
-    if (storedUser) {
+    
+    if (token && storedUser) {
       setUser(JSON.parse(storedUser))
     }
     setLoading(false)
   }, [])
 
   const signup = async (email: string, password: string, name: string) => {
-    const users = JSON.parse(localStorage.getItem("users") || "{}")
+    const response = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password, name }),
+    })
 
-    if (users[email]) {
-      throw new Error("User already exists")
+    const data = await response.json()
+
+    if (!response.ok) {
+      throw new Error(data.error || "Signup failed")
     }
 
-    const newUser = {
-      id: Math.random().toString(36).substr(2, 9),
-      email,
-      password: btoa(password), // Simple base64 encoding for demo
-      name,
-    }
-
-    users[email] = newUser
-    localStorage.setItem("users", JSON.stringify(users))
-
-    const { password: _, ...userWithoutPassword } = newUser
-    setUser(userWithoutPassword)
-    localStorage.setItem("auth_user", JSON.stringify(userWithoutPassword))
+    // Store token and user data
+    localStorage.setItem("auth_token", data.token)
+    localStorage.setItem("auth_user", JSON.stringify(data.user))
+    setUser(data.user)
   }
 
   const login = async (email: string, password: string) => {
-    const users = JSON.parse(localStorage.getItem("users") || "{}")
-    const user = users[email]
+    const response = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
 
-    if (!user || user.password !== btoa(password)) {
-      throw new Error("Invalid email or password")
+    const data = await response.json()
+
+    if (!response.ok) {
+      throw new Error(data.error || "Login failed")
     }
 
-    const { password: _, ...userWithoutPassword } = user
-    setUser(userWithoutPassword)
-    localStorage.setItem("auth_user", JSON.stringify(userWithoutPassword))
+    // Store token and user data
+    localStorage.setItem("auth_token", data.token)
+    localStorage.setItem("auth_user", JSON.stringify(data.user))
+    setUser(data.user)
   }
 
   const logout = () => {
     setUser(null)
+    localStorage.removeItem("auth_token")
     localStorage.removeItem("auth_user")
   }
 
