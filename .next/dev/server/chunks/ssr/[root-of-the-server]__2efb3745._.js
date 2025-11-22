@@ -23,43 +23,59 @@ const AuthContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project
 function AuthProvider({ children }) {
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
-    // Load user from localStorage on mount
+    // Load user and token from localStorage on mount
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const token = localStorage.getItem("auth_token");
         const storedUser = localStorage.getItem("auth_user");
-        if (storedUser) {
+        if (token && storedUser) {
             setUser(JSON.parse(storedUser));
         }
         setLoading(false);
     }, []);
     const signup = async (email, password, name)=>{
-        const users = JSON.parse(localStorage.getItem("users") || "{}");
-        if (users[email]) {
-            throw new Error("User already exists");
+        const response = await fetch("/api/auth/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password,
+                name
+            })
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error || "Signup failed");
         }
-        const newUser = {
-            id: Math.random().toString(36).substr(2, 9),
-            email,
-            password: btoa(password),
-            name
-        };
-        users[email] = newUser;
-        localStorage.setItem("users", JSON.stringify(users));
-        const { password: _, ...userWithoutPassword } = newUser;
-        setUser(userWithoutPassword);
-        localStorage.setItem("auth_user", JSON.stringify(userWithoutPassword));
+        // Store token and user data
+        localStorage.setItem("auth_token", data.token);
+        localStorage.setItem("auth_user", JSON.stringify(data.user));
+        setUser(data.user);
     };
     const login = async (email, password)=>{
-        const users = JSON.parse(localStorage.getItem("users") || "{}");
-        const user = users[email];
-        if (!user || user.password !== btoa(password)) {
-            throw new Error("Invalid email or password");
+        const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error || "Login failed");
         }
-        const { password: _, ...userWithoutPassword } = user;
-        setUser(userWithoutPassword);
-        localStorage.setItem("auth_user", JSON.stringify(userWithoutPassword));
+        // Store token and user data
+        localStorage.setItem("auth_token", data.token);
+        localStorage.setItem("auth_user", JSON.stringify(data.user));
+        setUser(data.user);
     };
     const logout = ()=>{
         setUser(null);
+        localStorage.removeItem("auth_token");
         localStorage.removeItem("auth_user");
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AuthContext.Provider, {
@@ -73,7 +89,7 @@ function AuthProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/lib/auth-context.tsx",
-        lineNumber: 75,
+        lineNumber: 85,
         columnNumber: 10
     }, this);
 }
