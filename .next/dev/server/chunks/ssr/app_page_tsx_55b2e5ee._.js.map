@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/fadhm/OneDrive/Desktop/expense-tracker-app/app/page.tsx"],"sourcesContent":["\"use client\"\n\nimport { useAuth } from \"@/lib/auth-context\"\nimport { useRouter } from \"next/navigation\"\nimport { useEffect } from \"react\"\n\nexport default function Home() {\n  const { user, loading } = useAuth()\n  const router = useRouter()\n\n  useEffect(() => {\n    if (!loading) {\n      if (user) {\n        router.push(\"/dashboard\")\n      } else {\n        router.push(\"/login\")\n      }\n    }\n  }, [user, loading, router])\n\n  return (\n    <div className=\"flex items-center justify-center min-h-screen bg-surface\">\n      <div className=\"text-center\">\n        <div className=\"animate-pulse text-text-muted\">Loading...</div>\n      </div>\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;AACA;AACA;AAJA;;;;;AAMe,SAAS;IACtB,MAAM,EAAE,IAAI,EAAE,OAAO,EAAE,GAAG,IAAA,kIAAO;IACjC,MAAM,SAAS,IAAA,+IAAS;IAExB,IAAA,kNAAS,EAAC;QACR,IAAI,CAAC,SAAS;YACZ,IAAI,MAAM;gBACR,OAAO,IAAI,CAAC;YACd,OAAO;gBACL,OAAO,IAAI,CAAC;YACd;QACF;IACF,GAAG;QAAC;QAAM;QAAS;KAAO;IAE1B,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;sBACb,cAAA,8OAAC;gBAAI,WAAU;0BAAgC;;;;;;;;;;;;;;;;AAIvD"}}]
+}

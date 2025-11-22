@@ -6,6 +6,7 @@ import { useState } from "react"
 import { useAuth } from "@/lib/auth-context"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function SignupPage() {
   const [name, setName] = useState("")
@@ -33,7 +34,12 @@ export default function SignupPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-surface">
-      <div className="card w-full max-w-md">
+      <motion.div
+        className="card w-full max-w-md"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className="text-2xl font-bold text-text mb-6 text-center">Create Account</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -83,7 +89,7 @@ export default function SignupPage() {
             Log in
           </Link>
         </p>
-      </div>
+      </motion.div>
     </div>
   )
 }
