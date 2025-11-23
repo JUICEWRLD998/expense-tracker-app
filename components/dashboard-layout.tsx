@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { DashboardSidebar } from "./dashboard-sidebar"
 import { DashboardNavbar } from "./dashboard-navbar"
+import { LoaderIcon } from "lucide-react"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -22,8 +23,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="text-muted-foreground">Loading...</div>
+      <div className="flex h-screen items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-4">
+          <LoaderIcon className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-sm text-muted-foreground">Loading your dashboard...</p>
+        </div>
       </div>
     )
   }
