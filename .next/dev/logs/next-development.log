@@ -553,3 +553,10 @@ It can also happen if the client has a browser extension installed which messes 
 [00:42:29.200] Server  LOG     Connected to PostgreSQL database
 [00:42:29.385] Server  LOG     Executed query {}
 [00:42:53.095] Server  LOG     Executed query {}
+[01:09:59.388] Server  LOG      ✓ Compiled in 9.4s
+[01:10:28.384] Server  LOG      ✓ Compiled in 1345ms
+[01:11:32.256] Server  LOG      ✓ Compiled in 8.4s
+[01:11:46.188] Server  LOG      ✓ Compiled in 1593ms
+[01:12:48.158] Server  LOG      ✓ Compiled in 15.4s
+[01:14:13.394] Server  LOG     Connected to PostgreSQL database
+[01:14:13.510] Server  LOG     Executed query {}
