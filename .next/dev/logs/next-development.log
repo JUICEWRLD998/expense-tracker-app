@@ -1,14 +1,555 @@
-[00:00:08.701] Server  LOG      ✓ Ready in 6.5s
-[00:00:26.570] Server  LOG      ○ Compiling / ...
-[00:01:19.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:22.880] Server  LOG      ○ Compiling /login ...
-[00:02:13.969] Server  LOG      ○ Compiling /signup ...
-[00:03:32.889] Server  LOG      ✓ Compiled in 4.5s
-[00:04:24.253] Server  LOG      ○ Compiling /api/auth/signup ...
-[00:04:31.603] Server  LOG     Connected to PostgreSQL database
-[00:04:32.066] Server  LOG     Executed query {}
-[00:04:32.390] Server  LOG     Executed query {}
-[00:04:36.141] Server  LOG      ○ Compiling /dashboard ...
-[00:16:38.835] Server  LOG      ○ Compiling /api/auth/login ...
-[00:16:43.092] Server  LOG     Connected to PostgreSQL database
-[00:16:43.219] Server  LOG     Executed query {}
+[00:00:31.713] Server  LOG      ✓ Ready in 21.7s
+[00:00:35.326] Server  LOG      ○ Compiling / ...
+[00:00:52.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.800] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[00:00:56.041] Server  LOG      ○ Compiling /dashboard ...
+[00:06:17.474] Server  LOG      ○ Compiling /login ...
+[00:06:31.975] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:32.322] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[00:10:50.190] Server  LOG      ✓ Compiled in 9.2s
+[00:11:48.918] Server  LOG      ✓ Compiled in 14.4s
+[00:12:52.433] Server  LOG      ○ Compiling /signup ...
+[00:27:12.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:13.279] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <motion.div className="w-full max..." initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} ...>
+      <div className="w-full max..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+        <SignupForm>
+          <div className="flex flex-...">
+            <Card className="overflow-h...">
+              <div data-slot="card" className="bg-card te...">
+                <CardContent className="grid p-0 m...">
+                  <div data-slot="card-content" className="grid p-0 m...">
+                    <form onSubmit={function handleSubmit} className="p-6 md:p-8">
+                      <FieldGroup>
+                        <div data-slot="field-group" className={"group/fi..."}>
+                          <div>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="name" type="text" placeholder="John Doe" value="" onChange={function onChange} ...>
+                                <input
+                                  type="text"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="name"
+                                  placeholder="John Doe"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="0"
+                                >
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                <input
+                                  type="email"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="email"
+                                  placeholder="m@example.com"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="1"
+                                >
+                          <Field>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <Button type="submit" className="w-full" disabled={false}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  type="submit"
+                                  disabled={false}
+-                                 jf-ext-button-ct="sign up"
+                                >
++                                 Sign Up
+                          ...
+                    ...
+            ...
+
+[00:28:02.358] Server  LOG      ○ Compiling /api/auth/signup ...
+[00:28:08.392] Server  LOG     Connected to PostgreSQL database
+[00:28:08.520] Server  LOG     Executed query {}
+[00:28:08.791] Server  LOG     Executed query {}
+[00:28:54.958] Server  LOG      ✓ Compiled in 2.2s
+[00:34:39.899] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:40.354] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <motion.div className="w-full max..." initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} ...>
+      <div className="w-full max..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+        <SignupForm>
+          <div className="flex flex-...">
+            <Card className="overflow-h...">
+              <div data-slot="card" className="bg-card te...">
+                <CardContent className="grid p-0 m...">
+                  <div data-slot="card-content" className="grid p-0 m...">
+                    <form onSubmit={function handleSubmit} className="p-6 md:p-8">
+                      <FieldGroup>
+                        <div data-slot="field-group" className={"group/fi..."}>
+                          <div>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="name" type="text" placeholder="John Doe" value="" onChange={function onChange} ...>
+                                <input
+                                  type="text"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="name"
+                                  placeholder="John Doe"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="0"
+                                >
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                <input
+                                  type="email"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="email"
+                                  placeholder="m@example.com"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="1"
+                                >
+                          <Field>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <Button type="submit" className="w-full" disabled={false}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  type="submit"
+                                  disabled={false}
+-                                 jf-ext-button-ct="sign up"
+                                >
++                                 Sign Up
+                          ...
+                    ...
+            ...
+
+[00:36:52.303] Server  LOG      ✓ Compiled in 1449ms
+[00:37:08.891] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:09.232] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/signup" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                            ...
+                              <div data-slot="field-group" className={"group/fi..."}>
+                                <div>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <FieldLabel>
+                                    <Input id="name" type="text" placeholder="John Doe" value="" ...>
+                                      <input
+                                        type="text"
+                                        data-slot="input"
+                                        className="file:text-foreground placeholder:text-muted-foreground selection:bg..."
+                                        id="name"
+                                        placeholder="John Doe"
+                                        value=""
+                                        onChange={function onChange}
+                                        required={true}
+                                        disabled={false}
+-                                       jf-ext-cache-id="0"
+                                      >
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <FieldLabel>
+                                    <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                      <input
+                                        type="email"
+                                        data-slot="input"
+                                        className="file:text-foreground placeholder:text-muted-foreground selection:bg..."
+                                        id="email"
+                                        placeholder="m@example.com"
+                                        value=""
+                                        onChange={function onChange}
+                                        required={true}
+                                        disabled={false}
+-                                       jf-ext-cache-id="1"
+                                      >
+                                <Field>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <Button type="submit" className="w-full" disabled={false}>
+                                      <button
+                                        data-slot="button"
+                                        className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+                                        type="submit"
+                                        disabled={false}
+-                                       jf-ext-button-ct="sign up"
+                                      >
++                                       Sign Up
+                                ...
+                  ...
+
+[00:38:41.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:41.482] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/signup" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                            ...
+                              <div data-slot="field-group" className={"group/fi..."}>
+                                <div>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <FieldLabel>
+                                    <Input id="name" type="text" placeholder="John Doe" value="" ...>
+                                      <input
+                                        type="text"
+                                        data-slot="input"
+                                        className="file:text-foreground placeholder:text-muted-foreground selection:bg..."
+                                        id="name"
+                                        placeholder="John Doe"
+                                        value=""
+                                        onChange={function onChange}
+                                        required={true}
+                                        disabled={false}
+-                                       jf-ext-cache-id="0"
+                                      >
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <FieldLabel>
+                                    <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                      <input
+                                        type="email"
+                                        data-slot="input"
+                                        className="file:text-foreground placeholder:text-muted-foreground selection:bg..."
+                                        id="email"
+                                        placeholder="m@example.com"
+                                        value=""
+                                        onChange={function onChange}
+                                        required={true}
+                                        disabled={false}
+-                                       jf-ext-cache-id="1"
+                                      >
+                                <Field>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <Button type="submit" className="w-full" disabled={false}>
+                                      <button
+                                        data-slot="button"
+                                        className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+                                        type="submit"
+                                        disabled={false}
+-                                       jf-ext-button-ct="sign up"
+                                      >
++                                       Sign Up
+                                ...
+                  ...
+
+[00:39:53.102] Server  LOG      ✓ Compiled in 5.3s
+[00:40:23.577] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:23.815] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <motion.div className="w-full max..." initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} ...>
+      <div className="w-full max..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+        <SignupForm>
+          <div className="flex flex-...">
+            <Card className="overflow-h...">
+              <div data-slot="card" className="bg-card te...">
+                <CardContent className="grid p-0 m...">
+                  <div data-slot="card-content" className="grid p-0 m...">
+                    <form onSubmit={function handleSubmit} className="p-6 md:p-8">
+                      <FieldGroup>
+                        <div data-slot="field-group" className={"group/fi..."}>
+                          <div>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="name" type="text" placeholder="John Doe" value="" onChange={function onChange} ...>
+                                <input
+                                  type="text"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="name"
+                                  placeholder="John Doe"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="0"
+                                >
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <FieldLabel>
+                              <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                <input
+                                  type="email"
+                                  data-slot="input"
+                                  className="file:text-foreground placeholder:text-muted-foreground selection:bg-prima..."
+                                  id="email"
+                                  placeholder="m@example.com"
+                                  value=""
+                                  onChange={function onChange}
+                                  required={true}
+                                  disabled={false}
+-                                 jf-ext-cache-id="1"
+                                >
+                          <Field>
+                          <Field>
+                            <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."}>
+                              <Button type="submit" className="w-full" disabled={false}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  type="submit"
+                                  disabled={false}
+-                                 jf-ext-button-ct="sign up"
+                                >
++                                 Sign Up
+                          ...
+                    ...
+            ...
+
+[00:41:10.608] Server  LOG      ✓ Compiled in 802ms
+[00:41:16.717] Server  LOG      ✓ Compiled in 454ms
+[00:41:35.830] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:36.244] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                            ...
+                              <div data-slot="field-group" className={"group/fi..."}>
+                                <div>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <FieldLabel>
+                                    <Input id="email" type="email" placeholder="m@example.com" value="" ...>
+                                      <input
+                                        type="email"
+                                        data-slot="input"
+                                        className="file:text-foreground placeholder:text-muted-foreground selection:bg..."
+                                        id="email"
+                                        placeholder="m@example.com"
+                                        value=""
+                                        onChange={function onChange}
+                                        required={true}
+                                        disabled={false}
+-                                       jf-ext-cache-id="0"
+                                      >
+                                <Field>
+                                <Field>
+                                  <div role="group" data-slot="field" data-orientation="vertical" ...>
+                                    <Button type="submit" className="w-full" disabled={false}>
+                                      <button
+                                        data-slot="button"
+                                        className={"inline-flex items-center justify-center gap-2 whitespace-nowrap r..."}
+                                        type="submit"
+                                        disabled={false}
+-                                       jf-ext-button-ct="login"
+                                      >
++                                       Login
+                                ...
+                  ...
+
+[00:42:25.603] Server  LOG      ○ Compiling /api/auth/login ...
+[00:42:29.200] Server  LOG     Connected to PostgreSQL database
+[00:42:29.385] Server  LOG     Executed query {}
+[00:42:53.095] Server  LOG     Executed query {}
