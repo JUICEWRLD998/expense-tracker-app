@@ -23,14 +23,19 @@ const AuthContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project
 function AuthProvider({ children }) {
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
-    // Load user and token from localStorage on mount
+    // Load user and token from localStorage on mount with delay
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const token = localStorage.getItem("auth_token");
-        const storedUser = localStorage.getItem("auth_user");
-        if (token && storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-        setLoading(false);
+        const checkAuth = async ()=>{
+            const token = localStorage.getItem("auth_token");
+            const storedUser = localStorage.getItem("auth_user");
+            // Add 4-second delay before showing login/signup pages
+            await new Promise((resolve)=>setTimeout(resolve, 4000));
+            if (token && storedUser) {
+                setUser(JSON.parse(storedUser));
+            }
+            setLoading(false);
+        };
+        checkAuth();
     }, []);
     const signup = async (email, password, name)=>{
         const response = await fetch("/api/auth/signup", {
@@ -89,7 +94,7 @@ function AuthProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/lib/auth-context.tsx",
-        lineNumber: 85,
+        lineNumber: 92,
         columnNumber: 10
     }, this);
 }

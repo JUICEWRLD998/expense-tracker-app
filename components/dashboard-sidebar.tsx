@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
     icon: FolderOpen,
   },
   {
-    title: "Ai",
+    title: "AI Assistant",
     href: "/dashboard/ai",
     icon: Bot,
   },

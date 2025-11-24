@@ -2,8 +2,23 @@
 
 import { motion } from "framer-motion"
 import { SignupForm } from "@/components/signup-form"
+import { useAuth } from "@/lib/auth-context"
+import { LoaderIcon } from "lucide-react"
 
 export default function SignupPage() {
+  const { loading } = useAuth()
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-4">
+          <LoaderIcon className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-sm text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
       <motion.div
