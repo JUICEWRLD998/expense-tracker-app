@@ -1,23 +1,33 @@
 "use client"
 
-import { type Expense, deleteExpense } from "@/lib/db-utils"
+import { type Expense } from "@/lib/db-utils"
 import { useState } from "react"
 import ExpenseItem from "./expense-item"
 
 interface ExpenseListProps {
   expenses: Expense[]
   onExpenseUpdate: () => void
-  userId: string
 }
 
-export default function ExpenseList({ expenses, onExpenseUpdate, userId }: ExpenseListProps) {
-  const [deletingId, setDeletingId] = useState<string | null>(null)
+export default function ExpenseList({ expenses, onExpenseUpdate }: ExpenseListProps) {
+  const [deletingId, setDeletingId] = useState<number | null>(null)
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: number) => {
     setDeletingId(id)
     try {
-      deleteExpense(userId, id)
-      onExpenseUpdate()
+      const token = localStorage.getItem("auth_token")
+      const response = await fetch(`/api/expenses/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      if (response.ok) {
+        onExpenseUpdate()
+      }
+    } catch (error) {
+      console.error("Failed to delete expense:", error)
     } finally {
       setDeletingId(null)
     }
@@ -41,7 +51,6 @@ export default function ExpenseList({ expenses, onExpenseUpdate, userId }: Expen
           expense={expense}
           onDelete={() => handleDelete(expense.id)}
           onUpdate={onExpenseUpdate}
-          userId={userId}
           isDeleting={deletingId === expense.id}
         />
       ))}

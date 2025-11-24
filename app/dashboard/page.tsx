@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useAuth } from "@/lib/auth-context"
-import { type Expense, getExpenses, addExpense } from "@/lib/db-utils"
+import { type Expense } from "@/lib/db-utils"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -32,38 +32,69 @@ import { Pie, PieChart } from "recharts"
 import ExpenseForm from "@/components/expense-form"
 import CategoryBreakdown from "@/components/category-breakdown"
 import { DollarSign, TrendingUp, TrendingDown, Plus, Receipt } from "lucide-react"
+import { Spinner } from "@/components/ui/spinner"
 
 export default function DashboardPage() {
   const { user } = useAuth()
   const [expenses, setExpenses] = useState<Expense[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-  // Load expenses when component mounts or user changes
+  // Load expenses from database
   useEffect(() => {
     if (user) {
-      const allExpenses = getExpenses(user.id)
-      setExpenses(allExpenses)
+      loadExpenses()
     }
   }, [user])
 
-  const handleAddExpense = (data: Omit<Expense, "id" | "userId">) => {
-    if (user) {
-      addExpense(user.id, data)
-      const allExpenses = getExpenses(user.id)
-      setExpenses(allExpenses)
-      setShowAddDialog(false)
+  const loadExpenses = async () => {
+    try {
+      setLoading(true)
+      const token = localStorage.getItem("auth_token")
+      const response = await fetch("/api/expenses", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setExpenses(data)
+      }
+    } catch (error) {
+      console.error("Failed to load expenses:", error)
+    } finally {
+      setLoading(false)
     }
   }
 
-  const handleExpensesUpdate = () => {
-    if (user) {
-      const allExpenses = getExpenses(user.id)
-      setExpenses(allExpenses)
+  const handleAddExpense = async (data: Omit<Expense, "id" | "userId">) => {
+    try {
+      const token = localStorage.getItem("auth_token")
+      const response = await fetch("/api/expenses", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        await loadExpenses()
+        setShowAddDialog(false)
+      }
+    } catch (error) {
+      console.error("Failed to add expense:", error)
     }
+  }
+
+  const handleExpensesUpdate = async () => {
+    await loadExpenses()
   }
 
   // Calculate statistics
-  const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0)
+  const totalExpenses = expenses.reduce((sum, exp) => sum + Number(exp.amount), 0)
   const currentMonth = new Date().getMonth()
   const currentYear = new Date().getFullYear()
   
@@ -72,7 +103,7 @@ export default function DashboardPage() {
       const expDate = new Date(exp.date)
       return expDate.getMonth() === currentMonth && expDate.getFullYear() === currentYear
     })
-    .reduce((sum, exp) => sum + exp.amount, 0)
+    .reduce((sum, exp) => sum + Number(exp.amount), 0)
 
   const lastMonthExpenses = expenses
     .filter((exp) => {
@@ -81,7 +112,7 @@ export default function DashboardPage() {
       const year = currentMonth === 0 ? currentYear - 1 : currentYear
       return expDate.getMonth() === lastMonth && expDate.getFullYear() === year
     })
-    .reduce((sum, exp) => sum + exp.amount, 0)
+    .reduce((sum, exp) => sum + Number(exp.amount), 0)
 
   const monthChange = lastMonthExpenses > 0 
     ? ((thisMonthExpenses - lastMonthExpenses) / lastMonthExpenses) * 100 
@@ -94,7 +125,7 @@ export default function DashboardPage() {
 
   // Calculate category distribution for pie chart
   const categoryTotals = expenses.reduce((acc, expense) => {
-    acc[expense.category] = (acc[expense.category] || 0) + expense.amount
+    acc[expense.category] = (acc[expense.category] || 0) + Number(expense.amount)
     return acc
   }, {} as Record<string, number>)
 
@@ -124,6 +155,19 @@ export default function DashboardPage() {
   const highestCategory = chartData.length > 0 
     ? chartData.reduce((max, item) => item.amount > max.amount ? item : max, chartData[0])
     : null
+
+  if (loading) {
+    return (
+      <DashboardLayout>
+        <div className="flex items-center justify-center h-[calc(100vh-200px)]">
+          <div className="flex flex-col items-center gap-4">
+            <Spinner className="h-8 w-8" />
+            <p className="text-muted-foreground">Loading expenses...</p>
+          </div>
+        </div>
+      </DashboardLayout>
+    )
+  }
 
   return (
     <DashboardLayout>
@@ -255,7 +299,7 @@ export default function DashboardPage() {
                     Top: {highestCategory.category}
                   </div>
                   <div className="text-muted-foreground leading-none">
-                    ${highestCategory.amount.toFixed(2)}
+                    ${Number(highestCategory.amount).toFixed(2)}
                   </div>
                 </>
               )}
@@ -272,7 +316,7 @@ export default function DashboardPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Description</TableHead>
+                  <TableHead>Title</TableHead>
                   <TableHead>Category</TableHead>
                   <TableHead>Date</TableHead>
                   <TableHead className="text-right">Amount</TableHead>
@@ -282,12 +326,12 @@ export default function DashboardPage() {
                 {recentExpenses.length > 0 ? (
                   recentExpenses.map((expense) => (
                     <TableRow key={expense.id}>
-                      <TableCell className="font-medium">{expense.description || "No description"}</TableCell>
+                      <TableCell className="font-medium">{expense.title}</TableCell>
                       <TableCell>
                         <Badge variant="outline">{expense.category}</Badge>
                       </TableCell>
                       <TableCell>{new Date(expense.date).toLocaleDateString()}</TableCell>
-                      <TableCell className="text-right font-medium">${expense.amount.toFixed(2)}</TableCell>
+                      <TableCell className="text-right font-medium">${Number(expense.amount).toFixed(2)}</TableCell>
                     </TableRow>
                   ))
                 ) : (

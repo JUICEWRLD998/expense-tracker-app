@@ -20,6 +20,7 @@ CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE TABLE IF NOT EXISTS expenses (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
   category VARCHAR(100) NOT NULL,
   description TEXT,
