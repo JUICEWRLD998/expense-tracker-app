@@ -32,9 +32,9 @@ export function DashboardNavbar() {
   }
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-6">
+    <div className="flex w-full items-center gap-4">
       {/* Search Bar */}
-      <div className="flex-1">
+      <div className="hidden flex-1 md:block">
         <div className="relative max-w-md">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
@@ -45,8 +45,16 @@ export function DashboardNavbar() {
         </div>
       </div>
 
+      {/* Mobile: Show search icon */}
+      <Button variant="ghost" size="icon" className="md:hidden">
+        <Search className="h-5 w-5" />
+      </Button>
+
+      {/* Spacer for mobile */}
+      <div className="flex-1 md:hidden" />
+
       {/* Right Side Actions */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4">
         {/* Notifications */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -116,6 +124,6 @@ export function DashboardNavbar() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-    </header>
+    </div>
   )
 }

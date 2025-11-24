@@ -3,7 +3,7 @@
 import { useAuth } from "@/lib/auth-context"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
-import { DashboardSidebar } from "./dashboard-sidebar"
+import { DashboardSidebar, MobileSidebar } from "./dashboard-sidebar"
 import { DashboardNavbar } from "./dashboard-navbar"
 import { LoaderIcon } from "lucide-react"
 
@@ -38,16 +38,24 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
+      {/* Desktop Sidebar - hidden on mobile */}
       <DashboardSidebar />
 
       {/* Main Content Area */}
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* Top Navbar */}
-        <DashboardNavbar />
+        {/* Top Navbar with Mobile Menu */}
+        <div className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-4 lg:px-6">
+          {/* Mobile Hamburger Menu */}
+          <MobileSidebar />
+          
+          {/* Navbar Content */}
+          <div className="flex-1">
+            <DashboardNavbar />
+          </div>
+        </div>
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto bg-muted/40 p-6">
+        <main className="flex-1 overflow-y-auto bg-muted/40 p-4 lg:p-6">
           {children}
         </main>
       </div>
