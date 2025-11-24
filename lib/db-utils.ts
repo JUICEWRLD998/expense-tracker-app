@@ -1,48 +1,123 @@
-// Mock database utilities - replace with real database calls in production
+// Database utilities for expense management
 export interface Expense {
-  id: string
-  userId: string
-  title: string
+  id: number
+  user_id: number
   amount: number
   category: string
   date: string
   description?: string
+  created_at?: string
+  updated_at?: string
 }
 
-export function getExpenses(userId: string): Expense[] {
-  const expenses = localStorage.getItem(`expenses_${userId}`)
-  return expenses ? JSON.parse(expenses) : []
+// Helper function to get auth token
+function getAuthToken(): string | null {
+  return localStorage.getItem("token")
 }
 
-export function addExpense(userId: string, expense: Omit<Expense, "id" | "userId">): Expense {
-  const newExpense: Expense = {
-    ...expense,
-    id: Math.random().toString(36).substr(2, 9),
-    userId,
+// Fetch all expenses for the current user
+export async function getExpenses(): Promise<Expense[]> {
+  const token = getAuthToken()
+  if (!token) {
+    throw new Error("No authentication token found")
   }
 
-  const expenses = getExpenses(userId)
-  expenses.push(newExpense)
-  localStorage.setItem(`expenses_${userId}`, JSON.stringify(expenses))
-  return newExpense
+  const response = await fetch("/api/expenses", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch expenses")
+  }
+
+  const data = await response.json()
+  return data.expenses
 }
 
-export function updateExpense(userId: string, id: string, updates: Partial<Expense>): Expense {
-  const expenses = getExpenses(userId)
-  const index = expenses.findIndex((e) => e.id === id)
+// Add a new expense
+export async function addExpense(
+  expense: Omit<Expense, "id" | "user_id" | "created_at" | "updated_at">
+): Promise<Expense> {
+  const token = getAuthToken()
+  if (!token) {
+    throw new Error("No authentication token found")
+  }
 
-  if (index === -1) throw new Error("Expense not found")
+  const response = await fetch("/api/expenses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(expense),
+  })
 
-  expenses[index] = { ...expenses[index], ...updates }
-  localStorage.setItem(`expenses_${userId}`, JSON.stringify(expenses))
-  return expenses[index]
+  if (!response.ok) {
+    throw new Error("Failed to add expense")
+  }
+
+  const data = await response.json()
+  return data.expense
 }
 
-export function deleteExpense(userId: string, id: string): void {
-  const expenses = getExpenses(userId)
-  const filtered = expenses.filter((e) => e.id !== id)
-  localStorage.setItem(`expenses_${userId}`, JSON.stringify(filtered))
+// Update an existing expense
+export async function updateExpense(
+  id: number,
+  updates: Partial<Omit<Expense, "id" | "user_id" | "created_at" | "updated_at">>
+): Promise<Expense> {
+  const token = getAuthToken()
+  if (!token) {
+    throw new Error("No authentication token found")
+  }
+
+  const response = await fetch(`/api/expenses/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(updates),
+  })
+
+  if (!response.ok) {
+    throw new Error("Failed to update expense")
+  }
+
+  const data = await response.json()
+  return data.expense
 }
+
+// Delete an expense
+export async function deleteExpense(id: number): Promise<void> {
+  const token = getAuthToken()
+  if (!token) {
+    throw new Error("No authentication token found")
+  }
+
+  const response = await fetch(`/api/expenses/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error("Failed to delete expense")
+  }
+}
+
+// Available expense categories
+export const CATEGORIES = [
+  "Food",
+  "Transport",
+  "Shopping",
+  "Entertainment",
+  "Utilities",
+  "Healthcare",
+  "Other",
+]
 
 export const CATEGORIES = [
   "Food & Dining",

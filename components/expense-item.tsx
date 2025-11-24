@@ -9,17 +9,20 @@ interface ExpenseItemProps {
   expense: Expense
   onDelete: () => void
   onUpdate: () => void
-  userId: string
   isDeleting: boolean
 }
 
-export default function ExpenseItem({ expense, onDelete, onUpdate, userId, isDeleting }: ExpenseItemProps) {
+export default function ExpenseItem({ expense, onDelete, onUpdate, isDeleting }: ExpenseItemProps) {
   const [isEditing, setIsEditing] = useState(false)
 
-  const handleUpdate = (updates: Partial<Expense>) => {
-    updateExpense(userId, expense.id, updates)
-    onUpdate()
-    setIsEditing(false)
+  const handleUpdate = async (updates: Omit<Expense, "id" | "user_id" | "created_at" | "updated_at">) => {
+    try {
+      await updateExpense(expense.id, updates)
+      onUpdate()
+      setIsEditing(false)
+    } catch (error) {
+      console.error("Failed to update expense:", error)
+    }
   }
 
   if (isEditing) {
@@ -41,11 +44,10 @@ export default function ExpenseItem({ expense, onDelete, onUpdate, userId, isDel
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-primary"></div>
           <div>
-            <h3 className="font-semibold text-text">{expense.title}</h3>
-            <p className="text-sm text-text-muted">
+            <h3 className="font-semibold">{expense.description || "Expense"}</h3>
+            <p className="text-sm text-muted-foreground">
               {expense.category} • {new Date(expense.date).toLocaleDateString()}
             </p>
-            {expense.description && <p className="text-sm text-text-muted mt-1">{expense.description}</p>}
           </div>
         </div>
       </div>
@@ -55,13 +57,14 @@ export default function ExpenseItem({ expense, onDelete, onUpdate, userId, isDel
           <div className="text-xl font-bold text-primary">${expense.amount.toFixed(2)}</div>
         </div>
         <div className="flex gap-2">
-          <Button onClick={() => setIsEditing(true)} className="btn-secondary text-sm">
+          <Button onClick={() => setIsEditing(true)} variant="outline" size="sm">
             Edit
           </Button>
           <Button
             onClick={onDelete}
             disabled={isDeleting}
-            className="text-sm bg-danger hover:bg-opacity-80 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+            variant="destructive"
+            size="sm"
           >
             {isDeleting ? "Deleting..." : "Delete"}
           </Button>

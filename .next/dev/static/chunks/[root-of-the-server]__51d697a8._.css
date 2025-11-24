@@ -1061,6 +1061,10 @@
     height: 1.15rem;
   }
 
+  .h-\[200px\] {
+    height: 200px;
+  }
+
   .h-\[calc\(100\%-1px\)\] {
     height: calc(100% - 1px);
   }
@@ -1103,6 +1107,10 @@
 
   .max-h-\(--radix-select-content-available-height\) {
     max-height: var(--radix-select-content-available-height);
+  }
+
+  .max-h-\[200px\] {
+    max-height: 200px;
   }
 
   .max-h-\[300px\] {
@@ -2000,6 +2008,10 @@
 
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
+  }
+
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
   }
 
   .pt-3 {

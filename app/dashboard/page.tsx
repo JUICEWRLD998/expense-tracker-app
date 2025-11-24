@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useAuth } from "@/lib/auth-context"
 import { type Expense, getExpenses, addExpense } from "@/lib/db-utils"
 import { DashboardLayout } from "@/components/dashboard-layout"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
   Table,
@@ -22,6 +22,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
+import { Pie, PieChart } from "recharts"
 import ExpenseForm from "@/components/expense-form"
 import CategoryBreakdown from "@/components/category-breakdown"
 import { DollarSign, TrendingUp, TrendingDown, Plus, Receipt } from "lucide-react"
@@ -30,51 +37,61 @@ export default function DashboardPage() {
   const { user } = useAuth()
   const [expenses, setExpenses] = useState<Expense[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   // Load expenses when component mounts or user changes
   useEffect(() => {
     if (user) {
-      const allExpenses = getExpenses(user.id)
-      setExpenses(allExpenses)
+      loadExpenses()
     }
   }, [user])
 
-  const handleAddExpense = (data: Omit<Expense, "id" | "userId">) => {
-    if (user) {
-      addExpense(user.id, data)
-      const allExpenses = getExpenses(user.id)
+  const loadExpenses = async () => {
+    try {
+      setLoading(true)
+      const allExpenses = await getExpenses()
       setExpenses(allExpenses)
-      setShowAddDialog(false)
+    } catch (error) {
+      console.error("Failed to load expenses:", error)
+    } finally {
+      setLoading(false)
     }
   }
 
-  const handleExpensesUpdate = () => {
-    if (user) {
-      const allExpenses = getExpenses(user.id)
-      setExpenses(allExpenses)
+  const handleAddExpense = async (data: Omit<Expense, "id" | "user_id" | "created_at" | "updated_at">) => {
+    try {
+      await addExpense(data)
+      await loadExpenses()
+      setShowAddDialog(false)
+    } catch (error) {
+      console.error("Failed to add expense:", error)
     }
+  }
+
+  const handleExpensesUpdate = async () => {
+    await loadExpenses()
   }
 
   // Calculate statistics
-  const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0)
+  const totalExpenses = expenses.reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
   const currentMonth = new Date().getMonth()
   const currentYear = new Date().getFullYear()
   
   const thisMonthExpenses = expenses
-    .filter((exp) => {
+    .filter((exp: Expense) => {
       const expDate = new Date(exp.date)
       return expDate.getMonth() === currentMonth && expDate.getFullYear() === currentYear
     })
-    .reduce((sum, exp) => sum + exp.amount, 0)
+    .reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
 
   const lastMonthExpenses = expenses
-    .filter((exp) => {
+    .filter((exp: Expense) => {
       const expDate = new Date(exp.date)
       const lastMonth = currentMonth === 0 ? 11 : currentMonth - 1
       const year = currentMonth === 0 ? currentYear - 1 : currentYear
       return expDate.getMonth() === lastMonth && expDate.getFullYear() === year
     })
-    .reduce((sum, exp) => sum + exp.amount, 0)
+    .reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
 
   const monthChange = lastMonthExpenses > 0 
     ? ((thisMonthExpenses - lastMonthExpenses) / lastMonthExpenses) * 100 
@@ -84,6 +101,39 @@ export default function DashboardPage() {
   const recentExpenses = [...expenses]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 5)
+
+  // Calculate category distribution for pie chart
+  const categoryTotals = expenses.reduce((acc: Record<string, number>, expense: Expense) => {
+    acc[expense.category] = (acc[expense.category] || 0) + expense.amount
+    return acc
+  }, {} as Record<string, number>)
+
+  // Define vibrant colors for pie chart
+  const pieColors = [
+    "#3b82f6", // blue
+    "#10b981", // green
+    "#f59e0b", // amber
+    "#ef4444", // red
+    "#8b5cf6", // purple
+    "#ec4899", // pink
+    "#14b8a6", // teal
+  ]
+
+  const chartData = Object.entries(categoryTotals).map(([category, amount], index) => ({
+    category,
+    amount,
+    fill: pieColors[index % pieColors.length],
+  }))
+
+  const chartConfig = {
+    amount: {
+      label: "Amount",
+    },
+  } satisfies ChartConfig
+
+  const highestCategory = chartData.length > 0 
+    ? chartData.reduce((max, item) => (item.amount as number) > (max.amount as number) ? item : max, chartData[0])
+    : null
 
   return (
     <DashboardLayout>
@@ -178,44 +228,48 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="col-span-1">
-            <CardHeader>
-              <CardTitle>Spending Insights</CardTitle>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">Spending by Category</CardTitle>
+              <CardDescription className="text-xs">
+                {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
+              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Average per transaction</span>
-                  <span className="font-medium">
-                    ${expenses.length > 0 ? (totalExpenses / expenses.length).toFixed(2) : "0.00"}
-                  </span>
+            <CardContent className="pb-2">
+              {chartData.length > 0 ? (
+                <ChartContainer
+                  config={chartConfig}
+                  className="mx-auto aspect-square max-h-[200px]"
+                >
+                  <PieChart>
+                    <ChartTooltip
+                      cursor={false}
+                      content={<ChartTooltipContent hideLabel />}
+                    />
+                    <Pie 
+                      data={chartData} 
+                      dataKey="amount" 
+                      nameKey="category"
+                    />
+                  </PieChart>
+                </ChartContainer>
+              ) : (
+                <div className="flex items-center justify-center h-[200px] text-muted-foreground text-sm">
+                  No expense data available
                 </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Highest expense</span>
-                  <span className="font-medium">
-                    ${expenses.length > 0 ? Math.max(...expenses.map((e) => e.amount)).toFixed(2) : "0.00"}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Most common category</span>
-                  <span className="font-medium">
-                    {expenses.length > 0
-                      ? expenses
-                          .reduce((acc, curr) => {
-                            acc[curr.category] = (acc[curr.category] || 0) + 1
-                            return acc
-                          }, {} as Record<string, number>)
-                          .constructor === Object &&
-                        Object.entries(
-                          expenses.reduce((acc, curr) => {
-                            acc[curr.category] = (acc[curr.category] || 0) + 1
-                            return acc
-                          }, {} as Record<string, number>)
-                        ).sort((a, b) => b[1] - a[1])[0]?.[0] || "None"
-                      : "None"}
-                  </span>
-                </div>
-              </div>
+              )}
             </CardContent>
+            <CardFooter className="flex-col gap-1 text-xs pt-2">
+              {highestCategory && (
+                <>
+                  <div className="flex items-center gap-2 leading-none font-medium">
+                    Top: {highestCategory.category}
+                  </div>
+                  <div className="text-muted-foreground leading-none">
+                    ${highestCategory.amount.toFixed(2)}
+                  </div>
+                </>
+              )}
+            </CardFooter>
           </Card>
         </div>
 

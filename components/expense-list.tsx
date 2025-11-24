@@ -7,17 +7,18 @@ import ExpenseItem from "./expense-item"
 interface ExpenseListProps {
   expenses: Expense[]
   onExpenseUpdate: () => void
-  userId: string
 }
 
-export default function ExpenseList({ expenses, onExpenseUpdate, userId }: ExpenseListProps) {
-  const [deletingId, setDeletingId] = useState<string | null>(null)
+export default function ExpenseList({ expenses, onExpenseUpdate }: ExpenseListProps) {
+  const [deletingId, setDeletingId] = useState<number | null>(null)
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: number) => {
     setDeletingId(id)
     try {
-      deleteExpense(userId, id)
+      await deleteExpense(id)
       onExpenseUpdate()
+    } catch (error) {
+      console.error("Failed to delete expense:", error)
     } finally {
       setDeletingId(null)
     }
@@ -41,7 +42,6 @@ export default function ExpenseList({ expenses, onExpenseUpdate, userId }: Expen
           expense={expense}
           onDelete={() => handleDelete(expense.id)}
           onUpdate={onExpenseUpdate}
-          userId={userId}
           isDeleting={deletingId === expense.id}
         />
       ))}
