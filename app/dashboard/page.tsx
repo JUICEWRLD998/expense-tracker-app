@@ -37,61 +37,51 @@ export default function DashboardPage() {
   const { user } = useAuth()
   const [expenses, setExpenses] = useState<Expense[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
-  const [loading, setLoading] = useState(true)
 
   // Load expenses when component mounts or user changes
   useEffect(() => {
     if (user) {
-      loadExpenses()
+      const allExpenses = getExpenses(user.id)
+      setExpenses(allExpenses)
     }
   }, [user])
 
-  const loadExpenses = async () => {
-    try {
-      setLoading(true)
-      const allExpenses = await getExpenses()
+  const handleAddExpense = (data: Omit<Expense, "id" | "userId">) => {
+    if (user) {
+      addExpense(user.id, data)
+      const allExpenses = getExpenses(user.id)
       setExpenses(allExpenses)
-    } catch (error) {
-      console.error("Failed to load expenses:", error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const handleAddExpense = async (data: Omit<Expense, "id" | "user_id" | "created_at" | "updated_at">) => {
-    try {
-      await addExpense(data)
-      await loadExpenses()
       setShowAddDialog(false)
-    } catch (error) {
-      console.error("Failed to add expense:", error)
     }
   }
 
-  const handleExpensesUpdate = async () => {
-    await loadExpenses()
+  const handleExpensesUpdate = () => {
+    if (user) {
+      const allExpenses = getExpenses(user.id)
+      setExpenses(allExpenses)
+    }
   }
 
   // Calculate statistics
-  const totalExpenses = expenses.reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
+  const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0)
   const currentMonth = new Date().getMonth()
   const currentYear = new Date().getFullYear()
   
   const thisMonthExpenses = expenses
-    .filter((exp: Expense) => {
+    .filter((exp) => {
       const expDate = new Date(exp.date)
       return expDate.getMonth() === currentMonth && expDate.getFullYear() === currentYear
     })
-    .reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
+    .reduce((sum, exp) => sum + exp.amount, 0)
 
   const lastMonthExpenses = expenses
-    .filter((exp: Expense) => {
+    .filter((exp) => {
       const expDate = new Date(exp.date)
       const lastMonth = currentMonth === 0 ? 11 : currentMonth - 1
       const year = currentMonth === 0 ? currentYear - 1 : currentYear
       return expDate.getMonth() === lastMonth && expDate.getFullYear() === year
     })
-    .reduce((sum: number, exp: Expense) => sum + exp.amount, 0)
+    .reduce((sum, exp) => sum + exp.amount, 0)
 
   const monthChange = lastMonthExpenses > 0 
     ? ((thisMonthExpenses - lastMonthExpenses) / lastMonthExpenses) * 100 
@@ -103,7 +93,7 @@ export default function DashboardPage() {
     .slice(0, 5)
 
   // Calculate category distribution for pie chart
-  const categoryTotals = expenses.reduce((acc: Record<string, number>, expense: Expense) => {
+  const categoryTotals = expenses.reduce((acc, expense) => {
     acc[expense.category] = (acc[expense.category] || 0) + expense.amount
     return acc
   }, {} as Record<string, number>)
@@ -127,12 +117,12 @@ export default function DashboardPage() {
 
   const chartConfig = {
     amount: {
-      label: "Amount",
+      label: " Amount",
     },
   } satisfies ChartConfig
 
   const highestCategory = chartData.length > 0 
-    ? chartData.reduce((max, item) => (item.amount as number) > (max.amount as number) ? item : max, chartData[0])
+    ? chartData.reduce((max, item) => item.amount > max.amount ? item : max, chartData[0])
     : null
 
   return (
