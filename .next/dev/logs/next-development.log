@@ -117,3 +117,896 @@ It can also happen if the client has a browser extension installed which messes 
 [00:18:41.023] Server  LOG     Executed query {}
 [00:18:41.712] Server  LOG     Connected to PostgreSQL database
 [00:18:41.760] Server  LOG     Executed query {}
+[00:22:28.880] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:22:28.890] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:22:28.892] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:22:28.893] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:22:56.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:22:56.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:23:12.763] Server  LOG     Connected to PostgreSQL database
+[00:23:12.856] Server  LOG     Executed query {}
+[00:23:12.934] Server  LOG     Executed query {}
+[00:23:14.330] Server  LOG     Connected to PostgreSQL database
+[00:23:14.356] Server  LOG     Executed query {}
+[00:37:32.825] Server  LOG      ✓ Compiled in 16s
+[00:37:58.000] Server  LOG      ○ Compiling /dashboard/expenses ...
+[00:38:22.945] Server  ERROR    ⨯ ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+
+
+./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+
+[00:38:27.539] Server  LOG      ○ Compiling /_error ...
+[00:38:28.164] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:28.165] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:28.165] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:28.165] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:31.514] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:31.514] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.564] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.564] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.564] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.564] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.565] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:33.565] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:34.543] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:34.543] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:34.606] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:34.607] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.247] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.247] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.247] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.247] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.490] Server  ERROR    ⨯ ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+
+
+./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+
+[00:38:38.920] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.920] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.920] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:38.920] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:39.762] Browser ERROR   uncaughtError: Error: ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+
+[00:38:40.000] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:40.000] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:40.488] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:40.488] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:40.882] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:38:40.882] Browser ERROR   ./app/dashboard/expenses/page.tsx:5:1
+Export ExpenseForm doesn't exist in target module
+  3 | import { useState, useEffect } from "react"
+  4 | import { useAuth } from "@/lib/auth-context"
+> 5 | import { ExpenseForm } from "@/components/expense-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import {
+  7 |   Dialog,
+  8 |   DialogContent,
+
+The export ExpenseForm was not found in module [project]/components/expense-form.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[00:39:14.825] Server  LOG      ✓ Compiled in 6.8s
+[00:39:32.499] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:39.485] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:39:39.536] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:39:39.550] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:39:39.604] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
+[00:40:35.859] Server  LOG      ✓ Compiled in 5.8s
+[00:40:38.705] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:38.911] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.058] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.147] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.254] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.319] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.569] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.672] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.812] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:40:39.837] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.839] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.843] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.845] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.847] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.849] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.850] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.853] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:39.857] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:40:40.238] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.284] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.332] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.344] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.349] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.396] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.499] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.654] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.676] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:40:40.826] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.829] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.833] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.903] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:40.988] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:41.084] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:41.185] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:41.299] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:40:41.332] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:40:46.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:53.095] Server  LOG     Connected to PostgreSQL database
+[00:40:53.490] Server  LOG     Executed query {}
+[00:49:28.775] Server  LOG      ✓ Compiled in 34.8s
+[00:49:40.884] Server  LOG     Connected to PostgreSQL database
+[00:49:41.026] Server  LOG     Executed query {}
+[00:49:46.638] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.706] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.723] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.730] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.746] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.762] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.768] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.773] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.778] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:49:46.799] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.834] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.864] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:46.997] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.047] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.081] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.163] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.173] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.178] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:49:47.996] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:47.998] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.003] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.014] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.036] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.037] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.053] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.126] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.209] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:49:48.291] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.300] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\node_modules_next_dist_b122ced6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.334] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.393] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.396] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.407] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.516] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.600] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:49:48.613] Server  ERROR    ⨯ Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:49:49.580] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/dashboard/expenses/page"
+[00:50:15.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:20.289] Server  LOG     Connected to PostgreSQL database
+[00:50:20.302] Server  LOG     Executed query {}

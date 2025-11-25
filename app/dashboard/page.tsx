@@ -6,6 +6,7 @@ import { type Expense } from "@/lib/db-utils"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import {
   Table,
   TableBody,
@@ -53,6 +54,8 @@ export default function DashboardPage() {
   const [selectedExpense, setSelectedExpense] = useState<Expense | null>(null)
   const [actionLoading, setActionLoading] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 10
 
   // Load expenses from database
   useEffect(() => {
@@ -184,10 +187,22 @@ export default function DashboardPage() {
     ? ((thisMonthExpenses - lastMonthExpenses) / lastMonthExpenses) * 100 
     : 0
 
-  // Get recent 5 expenses
-  const recentExpenses = [...expenses]
+  // Get sorted expenses for pagination
+  const sortedExpenses = [...expenses]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 5)
+  
+  // Calculate pagination
+  const totalPages = Math.ceil(sortedExpenses.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const recentExpenses = sortedExpenses.slice(startIndex, endIndex)
+
+  // Reset to page 1 when expenses change
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(1)
+    }
+  }, [expenses.length, currentPage, totalPages])
 
   // Calculate category distribution for pie chart
   const categoryTotals = expenses.reduce((acc, expense) => {
@@ -375,8 +390,22 @@ export default function DashboardPage() {
 
         {/* Recent Transactions Table */}
         <Card>
-          <CardHeader>
-            <CardTitle>Recent Transactions</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+            <div>
+              <CardTitle>Recent Transactions</CardTitle>
+              <CardDescription className="mt-1.5">
+                {expenses.length > 0 ? (
+                  <>
+                    Showing {startIndex + 1}-{Math.min(endIndex, sortedExpenses.length)} of {sortedExpenses.length} transactions
+                  </>
+                ) : (
+                  "No transactions yet"
+                )}
+              </CardDescription>
+            </div>
+            <Button asChild variant="outline" size="sm">
+              <Link href="/dashboard/expenses">View All</Link>
+            </Button>
           </CardHeader>
           <CardContent>
             <Table>
@@ -437,6 +466,31 @@ export default function DashboardPage() {
               </TableBody>
             </Table>
           </CardContent>
+          {totalPages > 1 && (
+            <CardFooter className="flex items-center justify-between border-t pt-4">
+              <div className="text-sm text-muted-foreground">
+                Page {currentPage} of {totalPages}
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </Button>
+              </div>
+            </CardFooter>
+          )}
         </Card>
       </div>
 
