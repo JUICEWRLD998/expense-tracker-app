@@ -2915,6 +2915,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:text-destructive:hover {
+      color: var(--destructive);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:text-destructive-foreground:hover {
       color: var(--destructive-foreground);
     }
@@ -4189,6 +4195,12 @@
   @media (min-width: 40rem) {
     .sm\:flex {
       display: flex;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:max-w-\[425px\] {
+      max-width: 425px;
     }
   }
 

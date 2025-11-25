@@ -1,66 +1,49 @@
-[00:00:06.799] Server  LOG      ✓ Ready in 4.9s
-[00:00:17.411] Server  LOG      ○ Compiling /dashboard ...
-[00:00:40.294] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:48.704] Server  LOG      ○ Compiling /api/expenses ...
-[00:00:51.485] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.609] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.628] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.713] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
-[00:00:51.881] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.924] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.939] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:51.963] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
-[00:02:08.489] Server  LOG      ✓ Compiled in 4.7s
-[00:03:01.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:06.546] Server  LOG     Connected to PostgreSQL database
-[00:03:06.663] Server  LOG     Executed query {}
-[00:03:11.372] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:11.372] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:38.110] Server  LOG     Connected to PostgreSQL database
-[00:03:38.184] Server  LOG     Executed query {}
-[00:03:38.268] Server  LOG     Executed query {}
-[00:03:38.443] Browser ERROR   uncaughtError: TypeError: totalExpenses.toFixed is not a function
-[00:05:15.378] Server  LOG      ✓ Compiled in 3.9s
-[00:05:25.950] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:05:30.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:35.399] Server  LOG      ✓ Compiled in 2.3s
-[00:05:40.112] Server  LOG     Connected to PostgreSQL database
-[00:05:40.204] Server  LOG     Executed query {}
-[00:05:43.074] Browser ERROR   uncaughtError: TypeError: expense.amount.toFixed is not a function
-[00:06:15.245] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:19.806] Server  LOG     Connected to PostgreSQL database
-[00:06:19.817] Server  LOG     Executed query {}
-[00:06:19.975] Browser ERROR   uncaughtError: TypeError: expense.amount.toFixed is not a function
-[00:06:26.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:30.667] Server  LOG     Executed query {}
-[00:06:30.815] Browser ERROR   uncaughtError: TypeError: expense.amount.toFixed is not a function
-[00:07:01.403] Server  LOG      ✓ Compiled in 772ms
-[00:07:05.447] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:07:10.634] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:25.424] Server  LOG     Connected to PostgreSQL database
-[00:07:25.513] Server  LOG     Executed query {}
-[00:07:31.080] Browser ERROR   uncaughtError: TypeError: amount.toFixed is not a function
-[00:07:40.793] Server  LOG      ✓ Compiled in 2.1s
-[00:07:43.576] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:07:51.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:28.604] Server  LOG     Connected to PostgreSQL database
-[00:08:28.669] Server  LOG     Executed query {}
-[00:08:31.091] Browser ERROR   uncaughtError: TypeError: amount.toFixed is not a function
-[00:08:49.123] Server  LOG      ○ Compiling /login ...
-[00:09:09.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:43.076] Server  LOG      ○ Compiling /api/auth/login ...
-[00:09:45.109] Server  LOG     Connected to PostgreSQL database
-[00:09:45.220] Server  LOG     Executed query {}
-[00:09:48.419] Server  LOG     Executed query {}
-[00:09:48.484] Server  LOG     Executed query {}
-[00:09:48.921] Browser ERROR   uncaughtError: TypeError: amount.toFixed is not a function
-[00:10:42.015] Server  LOG      ✓ Compiled in 1665ms
-[00:10:43.379] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:10:50.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:13.576] Server  LOG     Connected to PostgreSQL database
-[00:11:13.720] Server  LOG     Executed query {}
-[00:11:39.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:11:39.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:12:11.270] Server  LOG     Connected to PostgreSQL database
-[00:12:11.329] Server  LOG     Executed query {}
-[00:12:11.400] Server  LOG     Executed query {}
+[00:00:13.823] Server  LOG      ✓ Ready in 9.6s
+[00:00:18.471] Server  LOG      ○ Compiling /login ...
+[00:00:59.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:59.742] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[00:01:06.738] Server  LOG      ○ Compiling /dashboard ...
+[00:01:23.379] Server  LOG      ○ Compiling /api/expenses ...
+[00:01:24.893] Server  LOG     Connected to PostgreSQL database
+[00:01:25.026] Server  LOG     Executed query {}
+[00:01:25.151] Server  LOG     Executed query {}
+[00:03:35.954] Server  LOG      ✓ Compiled in 15.5s
+[00:03:36.951] Server  LOG     Connected to PostgreSQL database
+[00:03:37.212] Server  LOG     Executed query {}
+[00:03:38.011] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:42.356] Server  LOG     Executed query {}
