@@ -31,13 +31,27 @@ import {
 import { Pie, PieChart } from "recharts"
 import ExpenseForm from "@/components/expense-form"
 import CategoryBreakdown from "@/components/category-breakdown"
-import { DollarSign, TrendingUp, TrendingDown, Plus, Receipt } from "lucide-react"
+import { DollarSign, TrendingUp, TrendingDown, Plus, Receipt, Pencil, Trash2 } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 export default function DashboardPage() {
   const { user } = useAuth()
   const [expenses, setExpenses] = useState<Expense[]>([])
   const [showAddDialog, setShowAddDialog] = useState(false)
+  const [showEditDialog, setShowEditDialog] = useState(false)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
+  const [selectedExpense, setSelectedExpense] = useState<Expense | null>(null)
+  const [actionLoading, setActionLoading] = useState(false)
   const [loading, setLoading] = useState(true)
 
   // Load expenses from database
@@ -68,7 +82,7 @@ export default function DashboardPage() {
     }
   }
 
-  const handleAddExpense = async (data: Omit<Expense, "id" | "userId">) => {
+  const handleAddExpense = async (data: Omit<Expense, "id" | "user_id">) => {
     try {
       const token = localStorage.getItem("auth_token")
       const response = await fetch("/api/expenses", {
@@ -86,6 +100,58 @@ export default function DashboardPage() {
       }
     } catch (error) {
       console.error("Failed to add expense:", error)
+    }
+  }
+
+  const handleEditExpense = async (data: Omit<Expense, "id" | "user_id">) => {
+    if (!selectedExpense) return
+    
+    try {
+      setActionLoading(true)
+      const token = localStorage.getItem("auth_token")
+      const response = await fetch(`/api/expenses/${selectedExpense.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        await loadExpenses()
+        setShowEditDialog(false)
+        setSelectedExpense(null)
+      }
+    } catch (error) {
+      console.error("Failed to update expense:", error)
+    } finally {
+      setActionLoading(false)
+    }
+  }
+
+  const handleDeleteExpense = async () => {
+    if (!selectedExpense) return
+    
+    try {
+      setActionLoading(true)
+      const token = localStorage.getItem("auth_token")
+      const response = await fetch(`/api/expenses/${selectedExpense.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      if (response.ok) {
+        await loadExpenses()
+        setShowDeleteDialog(false)
+        setSelectedExpense(null)
+      }
+    } catch (error) {
+      console.error("Failed to delete expense:", error)
+    } finally {
+      setActionLoading(false)
     }
   }
 
@@ -320,6 +386,7 @@ export default function DashboardPage() {
                   <TableHead>Category</TableHead>
                   <TableHead>Date</TableHead>
                   <TableHead className="text-right">Amount</TableHead>
+                  <TableHead className="text-center">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -332,11 +399,37 @@ export default function DashboardPage() {
                       </TableCell>
                       <TableCell>{new Date(expense.date).toLocaleDateString()}</TableCell>
                       <TableCell className="text-right font-medium">${Number(expense.amount).toFixed(2)}</TableCell>
+                      <TableCell className="text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <Button 
+                            variant="ghost" 
+                            size="icon"
+                            className="h-8 w-8"
+                            onClick={() => {
+                              setSelectedExpense(expense)
+                              setShowEditDialog(true)
+                            }}
+                          >
+                            <Pencil className="h-4 w-4" />
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="icon"
+                            className="h-8 w-8 text-destructive hover:text-destructive"
+                            onClick={() => {
+                              setSelectedExpense(expense)
+                              setShowDeleteDialog(true)
+                            }}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </TableCell>
                     </TableRow>
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={4} className="h-24 text-center text-muted-foreground">
+                    <TableCell colSpan={5} className="h-24 text-center text-muted-foreground">
                       No expenses yet. Add your first expense to get started!
                     </TableCell>
                   </TableRow>
@@ -346,6 +439,46 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Edit Expense Dialog */}
+      <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Edit Expense</DialogTitle>
+          </DialogHeader>
+          {selectedExpense && (
+            <ExpenseForm 
+              initialData={selectedExpense}
+              onSubmit={handleEditExpense}
+              onCancel={() => setShowEditDialog(false)}
+              submitLabel={actionLoading ? "Saving..." : "Save Changes"}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete the expense
+              {selectedExpense && ` "${selectedExpense.title}"`} from your account.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={actionLoading}>Cancel</AlertDialogCancel>
+            <Button 
+              onClick={handleDeleteExpense}
+              disabled={actionLoading}
+              variant="destructive"
+            >
+              {actionLoading ? "Deleting..." : "Delete"}
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </DashboardLayout>
   )
 }

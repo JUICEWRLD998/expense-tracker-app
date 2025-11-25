@@ -1,4 +1,5 @@
 {
+  "/api/expenses/[id]/route": "app/api/expenses/[id]/route.js",
   "/api/expenses/route": "app/api/expenses/route.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/login/page": "app/login/page.js",

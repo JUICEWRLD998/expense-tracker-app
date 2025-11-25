@@ -15,7 +15,7 @@ interface ExpenseItemProps {
 export default function ExpenseItem({ expense, onDelete, onUpdate, isDeleting }: ExpenseItemProps) {
   const [isEditing, setIsEditing] = useState(false)
 
-  const handleUpdate = async (updates: Omit<Expense, "id" | "userId">) => {
+  const handleUpdate = async (updates: Omit<Expense, "id" | "user_id">) => {
     try {
       const token = localStorage.getItem("auth_token")
       const response = await fetch(`/api/expenses/${expense.id}`, {

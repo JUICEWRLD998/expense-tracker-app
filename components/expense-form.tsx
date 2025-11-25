@@ -7,9 +7,9 @@ import { type Expense, CATEGORIES } from "@/lib/db-utils"
 import { Button } from "@/components/ui/button"
 
 interface ExpenseFormProps {
-  initialData?: Expense
-  onSubmit: (data: Omit<Expense, "id" | "userId">) => void
-  onCancel: () => void
+  initialData?: Partial<Expense>
+  onSubmit: (data: Omit<Expense, "id" | "user_id">) => void
+  onCancel?: () => void
   submitLabel?: string
 }
 
@@ -133,9 +133,11 @@ export default function ExpenseForm({
         <Button type="submit" disabled={loading}>
           {loading ? "Saving..." : submitLabel}
         </Button>
-        <Button type="button" onClick={onCancel} variant="outline">
-          Cancel
-        </Button>
+        {onCancel && (
+          <Button type="button" onClick={onCancel} variant="outline">
+            Cancel
+          </Button>
+        )}
       </div>
     </form>
   )
