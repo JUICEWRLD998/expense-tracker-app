@@ -1010,3 +1010,4 @@ Import traces:
 [00:50:15.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:50:20.289] Server  LOG     Connected to PostgreSQL database
 [00:50:20.302] Server  LOG     Executed query {}
+[00:53:27.456] Server  LOG      ✓ Compiled in 6.8s

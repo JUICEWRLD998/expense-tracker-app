@@ -396,7 +396,7 @@ export default function DashboardPage() {
               <CardDescription className="mt-1.5">
                 {expenses.length > 0 ? (
                   <>
-                    Showing {startIndex + 1}-{Math.min(endIndex, sortedExpenses.length)} of {sortedExpenses.length} transactions
+                    {/* Showing {startIndex + 1}-{Math.min(endIndex, sortedExpenses.length)} of {sortedExpenses.length} transactions */}
                   </>
                 ) : (
                   "No transactions yet"
