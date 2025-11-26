@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useMemo } from "react"
+import { motion } from "framer-motion"
 import { useAuth } from "@/lib/auth-context"
 import { type Expense, CATEGORIES } from "@/lib/db-utils"
 import { DashboardLayout } from "@/components/dashboard-layout"
@@ -74,6 +75,26 @@ import {
 import { format, subDays, startOfMonth, isAfter, isBefore, parseISO } from "date-fns"
 import ExpenseForm from "@/components/expense-form"
 import { Spinner } from "@/components/ui/spinner"
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4 }
+  }
+}
 
 export default function ExpensesPage() {
   const { user } = useAuth()
@@ -305,9 +326,17 @@ export default function ExpensesPage() {
 
   return (
     <DashboardLayout>
-      <div className="space-y-6">
+      <motion.div 
+        className="space-y-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <motion.div 
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          variants={itemVariants}
+        >
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Expenses</h1>
             <p className="text-muted-foreground">
@@ -332,24 +361,32 @@ export default function ExpensesPage() {
               />
             </DialogContent>
           </Dialog>
-        </div>
+        </motion.div>
 
         {/* Stats & Chart Section */}
-        <div className="grid gap-4 md:grid-cols-4">
+        <motion.div 
+          className="grid gap-4 md:grid-cols-4"
+          variants={containerVariants}
+        >
           {/* Stats Cards */}
-          <Card className="p-4">
+          <motion.div variants={itemVariants}>
+            <Card className="p-4 h-full">
             <p className="text-xs font-medium text-muted-foreground">Total Spent</p>
             <p className="text-2xl font-bold mt-1">${totalAmount.toFixed(2)}</p>
             <p className="text-xs text-muted-foreground">{filteredExpenses.length} transactions</p>
-          </Card>
-          <Card className="p-4">
+            </Card>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Card className="p-4 h-full">
             <p className="text-xs font-medium text-muted-foreground">Average</p>
             <p className="text-2xl font-bold mt-1">${avgAmount.toFixed(2)}</p>
             <p className="text-xs text-muted-foreground">Per expense</p>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Chart Column */}
-          <Card className="md:col-span-2">
+          <motion.div variants={itemVariants} className="md:col-span-2">
+            <Card className="h-full">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">Spending Trend</CardTitle>
               <CardDescription className="text-xs">Daily spending</CardDescription>
@@ -394,11 +431,15 @@ export default function ExpensesPage() {
                 </AreaChart>
               </ChartContainer>
             </CardContent>
-          </Card>
-        </div>
+            </Card>
+          </motion.div>
+        </motion.div>
 
         {/* Filters Toolbar */}
-        <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg border shadow-sm">
+        <motion.div 
+          className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg border shadow-sm"
+          variants={itemVariants}
+        >
           <div className="flex flex-1 flex-col md:flex-row gap-4 w-full">
             <div className="relative w-full md:w-[300px]">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -454,10 +495,11 @@ export default function ExpensesPage() {
               </SelectContent>
             </Select>
           </div>
-        </div>
+        </motion.div>
 
         {/* Expenses Table */}
-        <Card>
+        <motion.div variants={itemVariants}>
+          <Card>
           <CardContent className="p-0">
             <Table>
               <TableHeader>
@@ -530,11 +572,15 @@ export default function ExpensesPage() {
               </TableBody>
             </Table>
           </CardContent>
-        </Card>
+          </Card>
+        </motion.div>
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between">
+          <motion.div 
+            className="flex items-center justify-between"
+            variants={itemVariants}
+          >
             <div className="text-sm text-muted-foreground">
               Showing {(currentPage - 1) * itemsPerPage + 1} to {Math.min(currentPage * itemsPerPage, filteredExpenses.length)} of {filteredExpenses.length} entries
             </div>
@@ -556,9 +602,9 @@ export default function ExpensesPage() {
                 Next
               </Button>
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
 
       {/* Edit Dialog */}
       <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>

@@ -246,3 +246,43 @@ It can also happen if the client has a browser extension installed which messes 
 [01:13:21.119] Server  LOG     Executed query {}
 [01:13:37.944] Server  LOG     Executed query {}
 [01:13:37.976] Server  LOG     Executed query {}
+[01:15:20.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:15:25.261] Server  LOG     Connected to PostgreSQL database
+[01:15:25.352] Server  LOG     Executed query {}
+[01:20:00.391] Server  LOG      ✓ Compiled in 11.3s
+[01:20:04.726] Browser ERROR   ./app/dashboard/expenses/page.tsx:603:13
+Parsing ecmascript source code failed
+  601 |           </div>
+  602 |         )}
+> 603 |       </div>
+      |             ^
+> 604 |
+      | ^
+> 605 |       {/* Edit Dialog */}
+      | ^^^^^^^
+  606 |       <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
+  607 |         <DialogContent className="sm:max-w-[500px]">
+  608 |           <DialogHeader>
+
+Expected '</', got 'jsx text (
+
+      )'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/expenses/page.tsx [Client Component Browser]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/expenses/page.tsx [Client Component SSR]
+    ./app/dashboard/expenses/page.tsx [Server Component]
+[01:20:31.384] Server  LOG     Connected to PostgreSQL database
+[01:20:31.477] Server  LOG     Executed query {}
+[01:20:31.558] Server  LOG     Executed query {}
+[01:22:01.740] Server  LOG     Connected to PostgreSQL database
+[01:22:01.882] Server  LOG     Executed query {}
+[01:22:02.009] Server  LOG     Executed query {}
+[01:22:05.436] Server  LOG     Executed query {}
+[01:22:05.545] Server  LOG     Executed query {}
+[01:22:28.050] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:32.557] Server  LOG     Executed query {}
