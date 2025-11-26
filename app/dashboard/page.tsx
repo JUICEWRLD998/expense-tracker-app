@@ -22,7 +22,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import {
   ChartConfig,
@@ -33,7 +32,7 @@ import {
 import { Pie, PieChart } from "recharts"
 import ExpenseForm from "@/components/expense-form"
 import CategoryBreakdown from "@/components/category-breakdown"
-import { DollarSign, TrendingUp, TrendingDown, Plus, Receipt, Pencil, Trash2 } from "lucide-react"
+import { DollarSign, TrendingUp, TrendingDown, Receipt, Pencil, Trash2 } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
 import {
   AlertDialog,
@@ -69,7 +68,6 @@ const itemVariants = {
 export default function DashboardPage() {
   const { user } = useAuth()
   const [expenses, setExpenses] = useState<Expense[]>([])
-  const [showAddDialog, setShowAddDialog] = useState(false)
   const [showEditDialog, setShowEditDialog] = useState(false)
   const [showDeleteDialog, setShowDeleteDialog] = useState(false)
   const [selectedExpense, setSelectedExpense] = useState<Expense | null>(null)
@@ -103,27 +101,6 @@ export default function DashboardPage() {
       console.error("Failed to load expenses:", error)
     } finally {
       setLoading(false)
-    }
-  }
-
-  const handleAddExpense = async (data: Omit<Expense, "id" | "user_id">) => {
-    try {
-      const token = localStorage.getItem("auth_token")
-      const response = await fetch("/api/expenses", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      })
-
-      if (response.ok) {
-        await loadExpenses()
-        setShowAddDialog(false)
-      }
-    } catch (error) {
-      console.error("Failed to add expense:", error)
     }
   }
 
@@ -279,35 +256,12 @@ export default function DashboardPage() {
         initial="hidden"
         animate="visible"
       >
-        {/* Header with Add Button */}
-        <motion.div 
-          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-          variants={itemVariants}
-        >
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-            <p className="text-muted-foreground">
-              Welcome back, {user?.name}! Here's your expense overview.
-            </p>
-          </div>
-          <Dialog open={showAddDialog} onOpenChange={setShowAddDialog}>
-            <DialogTrigger asChild>
-              <Button className="gap-2 w-full sm:w-auto">
-                <Plus className="h-4 w-4" />
-                Add Expense
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px]">
-              <DialogHeader>
-                <DialogTitle>Add New Expense</DialogTitle>
-              </DialogHeader>
-              <ExpenseForm
-                onSubmit={handleAddExpense}
-                onCancel={() => setShowAddDialog(false)}
-                submitLabel="Add Expense"
-              />
-            </DialogContent>
-          </Dialog>
+        {/* Header */}
+        <motion.div variants={itemVariants}>
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <p className="text-muted-foreground">
+            Welcome back, {user?.name}! Here's your expense overview.
+          </p>
         </motion.div>
 
         {/* Stats Cards */}

@@ -481,7 +481,7 @@ export default function ExpensesPage() {
           </div>
           <div className="flex items-center gap-2 w-full md:w-auto">
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-[160px]">
+              <SelectTrigger className="w-full md:w-40">
                 <div className="flex items-center gap-2">
                   <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
                   <SelectValue placeholder="Sort By" />
