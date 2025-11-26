@@ -95,3 +95,4 @@ For more information, see https://radix-ui.com/primitives/docs/components/dialog
 [00:44:30.820] Server  LOG     Connected to PostgreSQL database
 [00:44:31.316] Server  LOG     Executed query {}
 [00:44:32.621] Server  LOG     Executed query {}
+[00:46:56.466] Server  LOG      ✓ Compiled in 9.3s
