@@ -51,12 +51,14 @@ import {
   BarChart, 
   Bar, 
   XAxis, 
-  YAxis, 
   CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer,
-  Cell
 } from "recharts"
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
 import { 
   Plus, 
   Search, 
@@ -66,7 +68,8 @@ import {
   Trash2, 
   ArrowUpDown, 
   Calendar as CalendarIcon,
-  Download
+  Download,
+  TrendingUp
 } from "lucide-react"
 import { format, subDays, startOfMonth, isAfter, isBefore, parseISO } from "date-fns"
 import ExpenseForm from "@/components/expense-form"
@@ -205,6 +208,13 @@ export default function ExpensesPage() {
       .slice(-14) // Show last 14 data points max for clarity
   }, [filteredExpenses])
 
+  const chartConfig = {
+    amount: {
+      label: "Amount",
+      color: "hsl(var(--primary))",
+    },
+  } satisfies ChartConfig
+
   // Stats
   const totalAmount = filteredExpenses.reduce((sum, exp) => sum + Number(exp.amount), 0)
   const avgAmount = filteredExpenses.length > 0 ? totalAmount / filteredExpenses.length : 0
@@ -325,105 +335,43 @@ export default function ExpensesPage() {
         </div>
 
         {/* Stats & Chart Section */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* Stats Column */}
-          <div className="space-y-6">
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Total Spent (Filtered)
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold">${totalAmount.toFixed(2)}</div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Across {filteredExpenses.length} transactions
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Average Transaction
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold">${avgAmount.toFixed(2)}</div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Per expense
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="grid gap-4 md:grid-cols-4">
+          {/* Stats Cards */}
+          <Card className="p-4">
+            <p className="text-xs font-medium text-muted-foreground">Total Spent</p>
+            <p className="text-2xl font-bold mt-1">${totalAmount.toFixed(2)}</p>
+            <p className="text-xs text-muted-foreground">{filteredExpenses.length} transactions</p>
+          </Card>
+          <Card className="p-4">
+            <p className="text-xs font-medium text-muted-foreground">Average</p>
+            <p className="text-2xl font-bold mt-1">${avgAmount.toFixed(2)}</p>
+            <p className="text-xs text-muted-foreground">Per expense</p>
+          </Card>
 
           {/* Chart Column */}
           <Card className="md:col-span-2">
-            <CardHeader>
-              <CardTitle>Spending Trend</CardTitle>
-              <CardDescription>Daily spending for the selected period</CardDescription>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm">Spending Trend</CardTitle>
+              <CardDescription className="text-xs">Daily spending</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="h-[200px] w-full">
-                {chartData.length > 0 ? (
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                      <XAxis 
-                        dataKey="displayDate" 
-                        tick={{ fontSize: 12 }} 
-                        tickLine={false}
-                        axisLine={false}
-                      />
-                      <YAxis 
-                        tick={{ fontSize: 12 }} 
-                        tickLine={false}
-                        axisLine={false}
-                        tickFormatter={(value) => `$${value}`}
-                      />
-                      <Tooltip 
-                        cursor={{ fill: 'transparent' }}
-                        content={({ active, payload }) => {
-                          if (active && payload && payload.length) {
-                            return (
-                              <div className="rounded-lg border bg-background p-2 shadow-sm">
-                                <div className="grid grid-cols-2 gap-2">
-                                  <div className="flex flex-col">
-                                    <span className="text-[0.70rem] uppercase text-muted-foreground">
-                                      Date
-                                    </span>
-                                    <span className="font-bold text-muted-foreground">
-                                      {payload[0].payload.displayDate}
-                                    </span>
-                                  </div>
-                                  <div className="flex flex-col">
-                                    <span className="text-[0.70rem] uppercase text-muted-foreground">
-                                      Amount
-                                    </span>
-                                    <span className="font-bold">
-                                      ${Number(payload[0].value).toFixed(2)}
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            )
-                          }
-                          return null
-                        }}
-                      />
-                      <Bar 
-                        dataKey="amount" 
-                        fill="currentColor" 
-                        radius={[4, 4, 0, 0]} 
-                        className="fill-primary" 
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                ) : (
-                  <div className="flex h-full items-center justify-center text-muted-foreground text-sm">
-                    No data to display
-                  </div>
-                )}
-              </div>
+            <CardContent className="pb-4">
+              <ChartContainer config={chartConfig} className="h-[120px] w-full">
+                <BarChart accessibilityLayer data={chartData}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="displayDate"
+                    tickLine={false}
+                    tickMargin={8}
+                    axisLine={false}
+                    tick={{ fontSize: 10 }}
+                  />
+                  <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent indicator="dashed" />}
+                  />
+                  <Bar dataKey="amount" fill="hsl(var(--primary))" radius={4} />
+                </BarChart>
+              </ChartContainer>
             </CardContent>
           </Card>
         </div>

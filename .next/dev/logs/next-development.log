@@ -46,3 +46,24 @@ It can also happen if the client has a browser extension installed which messes 
 [00:02:04.298] Server  LOG     Connected to PostgreSQL database
 [00:02:04.460] Server  LOG     Executed query {}
 [00:02:04.589] Server  LOG     Executed query {}
+[00:09:49.915] Server  LOG      ✓ Compiled in 20.5s
+[00:10:02.489] Server  LOG      ✓ Compiled in 8.6s
+[00:10:25.439] Browser ERROR   uncaughtError: ReferenceError: ResponsiveContainer is not defined
+[00:10:27.258] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:38.011] Server  LOG     Connected to PostgreSQL database
+[00:10:38.168] Server  LOG     Executed query {}
+[00:10:38.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:42.841] Server  LOG     Executed query {}
+[00:12:52.170] Server  LOG      ✓ Compiled in 6.5s
+[00:25:20.405] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:25:20.412] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:25:59.831] Server  LOG     Connected to PostgreSQL database
+[00:25:59.994] Server  LOG     Executed query {}
+[00:26:00.145] Server  LOG     Executed query {}
+[00:26:36.355] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:26:36.355] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:27:07.731] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:27:07.732] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:27:46.500] Server  LOG     Connected to PostgreSQL database
+[00:27:46.610] Server  LOG     Executed query {}
+[00:27:46.701] Server  LOG     Executed query {}
