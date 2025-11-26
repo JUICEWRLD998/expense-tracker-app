@@ -67,3 +67,31 @@ It can also happen if the client has a browser extension installed which messes 
 [00:27:46.500] Server  LOG     Connected to PostgreSQL database
 [00:27:46.610] Server  LOG     Executed query {}
 [00:27:46.701] Server  LOG     Executed query {}
+[00:32:56.312] Server  LOG      ✓ Compiled in 16.4s
+[00:34:14.132] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:34:14.136] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:34:42.137] Server  LOG     Connected to PostgreSQL database
+[00:34:42.508] Server  LOG     Executed query {}
+[00:34:42.927] Server  LOG     Executed query {}
+[00:36:44.952] Server  LOG      ✓ Compiled in 5.3s
+[00:42:09.895] Server  LOG      ✓ Compiled in 15s
+[00:42:40.164] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:42:40.165] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:43:01.020] Server  LOG     Connected to PostgreSQL database
+[00:43:01.172] Server  LOG     Executed query {}
+[00:43:01.520] Server  LOG     Executed query {}
+[00:44:16.941] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:44:16.941] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:44:16.941] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:44:16.941] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:44:30.820] Server  LOG     Connected to PostgreSQL database
+[00:44:31.316] Server  LOG     Executed query {}
+[00:44:32.621] Server  LOG     Executed query {}

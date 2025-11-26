@@ -48,10 +48,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
+  Area,
+  AreaChart, 
   CartesianGrid, 
+  XAxis, 
 } from "recharts"
 import {
   ChartConfig,
@@ -211,7 +211,7 @@ export default function ExpensesPage() {
   const chartConfig = {
     amount: {
       label: "Amount",
-      color: "hsl(var(--primary))",
+      color: "var(--chart-1)",
     },
   } satisfies ChartConfig
 
@@ -356,21 +356,42 @@ export default function ExpensesPage() {
             </CardHeader>
             <CardContent className="pb-4">
               <ChartContainer config={chartConfig} className="h-[120px] w-full">
-                <BarChart accessibilityLayer data={chartData}>
-                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                <AreaChart
+                  accessibilityLayer
+                  data={chartData}
+                  margin={{ left: 12, right: 12 }}
+                >
+                  <CartesianGrid vertical={false} />
                   <XAxis
                     dataKey="displayDate"
                     tickLine={false}
-                    tickMargin={8}
                     axisLine={false}
+                    tickMargin={8}
                     tick={{ fontSize: 10 }}
                   />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent indicator="dashed" />}
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                  <defs>
+                    <linearGradient id="fillAmount" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="5%"
+                        stopColor="var(--color-amount)"
+                        stopOpacity={0.8}
+                      />
+                      <stop
+                        offset="95%"
+                        stopColor="var(--color-amount)"
+                        stopOpacity={0.1}
+                      />
+                    </linearGradient>
+                  </defs>
+                  <Area
+                    dataKey="amount"
+                    type="natural"
+                    fill="url(#fillAmount)"
+                    fillOpacity={0.4}
+                    stroke="var(--color-amount)"
                   />
-                  <Bar dataKey="amount" fill="hsl(var(--primary))" radius={4} />
-                </BarChart>
+                </AreaChart>
               </ChartContainer>
             </CardContent>
           </Card>
