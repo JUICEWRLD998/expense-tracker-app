@@ -96,3 +96,153 @@ For more information, see https://radix-ui.com/primitives/docs/components/dialog
 [00:44:31.316] Server  LOG     Executed query {}
 [00:44:32.621] Server  LOG     Executed query {}
 [00:46:56.466] Server  LOG      ✓ Compiled in 9.3s
+[00:50:28.281] Server  LOG     Connected to PostgreSQL database
+[00:50:28.417] Server  LOG     Executed query {}
+[00:50:28.558] Server  LOG     Executed query {}
+[00:52:48.617] Server  LOG     Connected to PostgreSQL database
+[00:52:48.719] Server  LOG     Executed query {}
+[00:52:48.897] Server  LOG     Executed query {}
+[00:55:45.540] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:55:45.540] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:55:45.540] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:55:45.540] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:55:47.252] Server  LOG     Connected to PostgreSQL database
+[00:55:47.343] Server  LOG     Executed query {}
+[00:55:47.412] Server  LOG     Executed query {}
+[00:59:52.525] Server  LOG     Connected to PostgreSQL database
+[00:59:52.627] Server  LOG     Executed query {}
+[00:59:52.686] Server  LOG     Executed query {}
+[01:06:36.891] Server  LOG      ✓ Compiled in 15.9s
+[01:07:36.858] Server  LOG      ✓ Compiled in 15.5s
+[01:10:05.987] Server  LOG      ✓ Compiled in 12.8s
+[01:11:03.648] Browser ERROR   ./app/dashboard/page.tsx:311:15
+Parsing ecmascript source code failed
+  309 |             </DialogContent>
+  310 |           </Dialog>
+> 311 |         </div>
+      |               ^
+> 312 |
+      | ^
+> 313 |         {/* Stats Cards */}
+      | ^^^^^^^^^
+  314 |         <motion.div 
+  315 |           className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+  316 |           variants={containerVariants}
+
+Expected '</', got 'jsx text (
+
+        )'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+[01:11:03.664] Browser ERROR   ./app/dashboard/page.tsx:311:15
+Parsing ecmascript source code failed
+  309 |             </DialogContent>
+  310 |           </Dialog>
+> 311 |         </div>
+      |               ^
+> 312 |
+      | ^
+> 313 |         {/* Stats Cards */}
+      | ^^^^^^^^^
+  314 |         <motion.div 
+  315 |           className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+  316 |           variants={containerVariants}
+
+Expected '</', got 'jsx text (
+
+        )'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+[01:11:03.668] Browser ERROR   ./app/dashboard/page.tsx:311:15
+Parsing ecmascript source code failed
+  309 |             </DialogContent>
+  310 |           </Dialog>
+> 311 |         </div>
+      |               ^
+> 312 |
+      | ^
+> 313 |         {/* Stats Cards */}
+      | ^^^^^^^^^
+  314 |         <motion.div 
+  315 |           className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+  316 |           variants={containerVariants}
+
+Expected '</', got 'jsx text (
+
+        )'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+[01:12:54.053] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:55.088] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[01:12:59.356] Server  LOG     Connected to PostgreSQL database
+[01:12:59.451] Server  LOG     Executed query {}
+[01:13:07.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:12.057] Server  LOG     Executed query {}
+[01:13:21.067] Server  LOG     Executed query {}
+[01:13:21.119] Server  LOG     Executed query {}
+[01:13:37.944] Server  LOG     Executed query {}
+[01:13:37.976] Server  LOG     Executed query {}

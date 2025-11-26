@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { useAuth } from "@/lib/auth-context"
 import { type Expense } from "@/lib/db-utils"
 import { DashboardLayout } from "@/components/dashboard-layout"
@@ -44,6 +45,26 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4 }
+  }
+}
 
 export default function DashboardPage() {
   const { user } = useAuth()
@@ -252,9 +273,17 @@ export default function DashboardPage() {
 
   return (
     <DashboardLayout>
-      <div className="space-y-6">
+      <motion.div 
+        className="space-y-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* Header with Add Button */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <motion.div 
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          variants={itemVariants}
+        >
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
             <p className="text-muted-foreground">
@@ -279,70 +308,87 @@ export default function DashboardPage() {
               />
             </DialogContent>
           </Dialog>
-        </div>
+        </motion.div>
 
         {/* Stats Cards */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">${totalExpenses.toFixed(2)}</div>
-              <p className="text-xs text-muted-foreground">All time</p>
-            </CardContent>
-          </Card>
+        <motion.div 
+          className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
+                <DollarSign className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">${totalExpenses.toFixed(2)}</div>
+                <p className="text-xs text-muted-foreground">All time</p>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">This Month</CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">${thisMonthExpenses.toFixed(2)}</div>
-              <p className="text-xs text-muted-foreground">
-                {monthChange >= 0 ? "+" : ""}
-                {monthChange.toFixed(1)}% from last month
-              </p>
-            </CardContent>
-          </Card>
+          <motion.div variants={itemVariants}>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">This Month</CardTitle>
+                <TrendingUp className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">${thisMonthExpenses.toFixed(2)}</div>
+                <p className="text-xs text-muted-foreground">
+                  {monthChange >= 0 ? "+" : ""}
+                  {monthChange.toFixed(1)}% from last month
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Last Month</CardTitle>
-              <TrendingDown className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">${lastMonthExpenses.toFixed(2)}</div>
-              <p className="text-xs text-muted-foreground">Previous period</p>
-            </CardContent>
-          </Card>
+          <motion.div variants={itemVariants}>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Last Month</CardTitle>
+                <TrendingDown className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">${lastMonthExpenses.toFixed(2)}</div>
+                <p className="text-xs text-muted-foreground">Previous period</p>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Transactions</CardTitle>
-              <Receipt className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{expenses.length}</div>
-              <p className="text-xs text-muted-foreground">Total count</p>
-            </CardContent>
-          </Card>
-        </div>
+          <motion.div variants={itemVariants}>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Transactions</CardTitle>
+                <Receipt className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{expenses.length}</div>
+                <p className="text-xs text-muted-foreground">Total count</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
 
         {/* Charts and Breakdown */}
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card className="col-span-1">
-            <CardHeader>
-              <CardTitle>Category Breakdown</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CategoryBreakdown expenses={expenses} />
-            </CardContent>
-          </Card>
+        <motion.div 
+          className="grid gap-4 md:grid-cols-2"
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
+            <Card className="h-full">
+              <CardHeader>
+                <CardTitle>Category Breakdown</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CategoryBreakdown expenses={expenses} />
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card className="col-span-1">
+          <motion.div variants={itemVariants}>
+            <Card className="h-full">
             <CardHeader className="pb-3">
               <CardTitle className="text-base">Spending by Category</CardTitle>
               <CardDescription className="text-xs">
@@ -385,11 +431,13 @@ export default function DashboardPage() {
                 </>
               )}
             </CardFooter>
-          </Card>
-        </div>
+            </Card>
+          </motion.div>
+        </motion.div>
 
         {/* Recent Transactions Table */}
-        <Card>
+        <motion.div variants={itemVariants}>
+          <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
             <div>
               <CardTitle>Recent Transactions</CardTitle>
@@ -491,8 +539,9 @@ export default function DashboardPage() {
               </div>
             </CardFooter>
           )}
-        </Card>
-      </div>
+          </Card>
+        </motion.div>
+      </motion.div>
 
       {/* Edit Expense Dialog */}
       <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
