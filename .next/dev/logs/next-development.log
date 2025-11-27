@@ -1,7 +1,7 @@
-[00:00:09.626] Server  LOG      ✓ Ready in 7.8s
-[00:00:13.666] Server  LOG      ○ Compiling /dashboard ...
-[00:00:57.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:57.587] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:19.166] Server  LOG      ✓ Ready in 15s
+[00:01:09.292] Server  LOG      ○ Compiling / ...
+[00:01:39.931] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:40.261] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -19,7 +19,7 @@ It can also happen if the client has a browser extension installed which messes 
         <ReplaySsrOnlyErrors>
         <DevRootHTTPAccessFallbackBoundary>
           <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
               <RedirectBoundary>
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
@@ -37,6 +37,51 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[00:01:04.884] Server  LOG      ○ Compiling /api/expenses ...
-[00:01:06.916] Server  LOG     Connected to PostgreSQL database
-[00:01:07.065] Server  LOG     Executed query {}
+[00:01:47.327] Server  LOG      ○ Compiling /dashboard ...
+[00:02:17.609] Server  LOG      ○ Compiling /api/expenses ...
+[00:02:22.260] Server  LOG     Connected to PostgreSQL database
+[00:02:22.448] Server  LOG     Executed query {}
+[00:02:22.707] Server  LOG     Executed query {}
+[00:02:43.652] Server  LOG      ○ Compiling /dashboard/expenses ...
+[00:02:59.754] Server  LOG     Connected to PostgreSQL database
+[00:02:59.937] Server  LOG     Executed query {}
+[00:03:00.327] Server  LOG     Executed query {}
+[15:36:37.211] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[15:36:48.252] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[15:36:53.779] Server  LOG     Connected to PostgreSQL database
+[15:36:54.024] Server  LOG     Executed query {}
