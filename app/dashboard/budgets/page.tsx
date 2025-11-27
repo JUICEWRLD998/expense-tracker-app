@@ -316,15 +316,15 @@ export default function BudgetsPage() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Budget</p>
-                  <p className="text-2xl font-bold">${totalBudget.toFixed(2)}</p>
+                  <p className="text-1xl font-bold">${totalBudget.toFixed(2)}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Spent</p>
-                  <p className="text-2xl font-bold">${totalSpent.toFixed(2)}</p>
+                  <p className="text-1xl font-bold">${totalSpent.toFixed(2)}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Remaining</p>
-                  <p className={`text-2xl font-bold ${totalRemaining < 0 ? "text-destructive" : "text-green-500"}`}>
+                  <p className={`text-1xl font-bold ${totalRemaining < 0 ? "text-destructive" : "text-green-500"}`}>
                     ${totalRemaining.toFixed(2)}
                   </p>
                 </div>
