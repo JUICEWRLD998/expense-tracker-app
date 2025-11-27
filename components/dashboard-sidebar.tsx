@@ -37,9 +37,9 @@ const navItems: NavItem[] = [
     icon: Receipt,
   },
   {
-    title: "Categories",
-    href: "/dashboard/categories",
-    icon: FolderOpen,
+    title: "Budgets",
+    href: "/dashboard/budgets",
+    icon: Wallet,
   },
   {
     title: "AI Assistant",

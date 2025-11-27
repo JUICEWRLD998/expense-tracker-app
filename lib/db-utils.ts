@@ -20,3 +20,15 @@ export const CATEGORIES = [
   "Healthcare",
   "Other",
 ]
+
+// Database budget interface
+export interface Budget {
+  id: number
+  user_id: number
+  category: string
+  amount: number
+  month: number
+  year: number
+  created_at?: string
+  updated_at?: string
+}
