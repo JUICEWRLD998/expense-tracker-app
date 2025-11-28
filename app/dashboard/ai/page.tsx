@@ -255,9 +255,7 @@ export default function AIAssistantPage() {
                   <Send className="h-4 w-4" />
                 </Button>
               </form>
-              <p className="text-xs text-muted-foreground mt-2 text-center">
-                Press Enter to send, Shift+Enter for new line
-              </p>
+              
             </div>
           </Card>
         </motion.div>
