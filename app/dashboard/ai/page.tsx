@@ -189,7 +189,7 @@ export default function AIAssistantPage() {
             </p>
           </div>
           {messages.length > 0 && (
-            <Button variant="outline" size="sm" onClick={clearChat} className="gap-2">
+            <Button variant="destructive" size="sm" onClick={clearChat} className="gap-2">
               <Trash2 className="h-4 w-4" />
               Clear Chat
             </Button>
