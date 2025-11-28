@@ -1,7 +1,11 @@
-[00:00:08.950] Server  LOG      ✓ Ready in 5.7s
-[00:00:19.855] Server  LOG      ○ Compiling /signup ...
-[00:00:55.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:56.592] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:11.782] Server  LOG      ✓ Ready in 9.6s
+[00:00:21.147] Server  LOG      ○ Compiling / ...
+[00:00:42.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.844] Server  LOG      ○ Compiling /login ...
+[00:24:07.389] Server  LOG      ○ Compiling /signup ...
+[00:26:12.934] Server  LOG      ✓ Compiled in 5.7s
+[00:26:49.926] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:50.869] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -19,7 +23,7 @@ It can also happen if the client has a browser extension installed which messes 
         <ReplaySsrOnlyErrors>
         <DevRootHTTPAccessFallbackBoundary>
           <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
               <RedirectBoundary>
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
@@ -37,15 +41,8 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[00:01:03.806] Server  LOG      ○ Compiling /login ...
-[00:01:58.260] Server  LOG      ○ Compiling /api/auth/login ...
-[00:02:02.872] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__ce4edd27._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.049] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.111] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\node_modules__pnpm_24a13ba4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.158] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.176] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.189] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.193] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.199] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.207] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:02:03.455] Server  ERROR   Login error: Error: getaddrinfo ENOTFOUND db.jxheyhksvlyetwtosaaw.supabase.co
+[00:27:12.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:16.872] Server  LOG      ○ Compiling /api/auth/signup ...
+[00:28:46.333] Server  LOG     Connected to PostgreSQL database
+[00:28:46.665] Server  LOG     Executed query {}
+[00:28:47.063] Server  LOG     Executed query {}
