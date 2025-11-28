@@ -1110,6 +1110,14 @@
     height: 120px;
   }
 
+  .h-\[140px\] {
+    height: 140px;
+  }
+
+  .h-\[150px\] {
+    height: 150px;
+  }
+
   .h-\[200px\] {
     height: 200px;
   }
@@ -4823,16 +4831,6 @@
 
   .dark\:text-muted-foreground:is(.dark *) {
     color: var(--muted-foreground);
-  }
-
-  .dark\:brightness-\[0\.2\]:is(.dark *) {
-    --tw-brightness: brightness(.2);
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
-  }
-
-  .dark\:grayscale:is(.dark *) {
-    --tw-grayscale: grayscale(100%);
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
   @media (hover: hover) {

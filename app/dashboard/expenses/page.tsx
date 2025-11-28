@@ -49,9 +49,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { 
-  Area,
-  AreaChart, 
   CartesianGrid, 
+  Line,
+  LineChart,
   XAxis, 
 } from "recharts"
 import {
@@ -232,7 +232,7 @@ export default function ExpensesPage() {
   const chartConfig = {
     amount: {
       label: "Amount",
-      color: "var(--chart-1)",
+      color: "hsl(221.2 83.2% 53.3%)",
     },
   } satisfies ChartConfig
 
@@ -393,7 +393,7 @@ export default function ExpensesPage() {
             </CardHeader>
             <CardContent className="pb-4">
               <ChartContainer config={chartConfig} className="h-[120px] w-full">
-                <AreaChart
+                <LineChart
                   accessibilityLayer
                   data={chartData}
                   margin={{ left: 12, right: 12 }}
@@ -404,31 +404,20 @@ export default function ExpensesPage() {
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tick={{ fontSize: 10 }}
+                    tickFormatter={(value) => value.slice(0, 6)}
                   />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-                  <defs>
-                    <linearGradient id="fillAmount" x1="0" y1="0" x2="0" y2="1">
-                      <stop
-                        offset="5%"
-                        stopColor="var(--color-amount)"
-                        stopOpacity={0.8}
-                      />
-                      <stop
-                        offset="95%"
-                        stopColor="var(--color-amount)"
-                        stopOpacity={0.1}
-                      />
-                    </linearGradient>
-                  </defs>
-                  <Area
+                  <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent hideLabel />}
+                  />
+                  <Line
                     dataKey="amount"
                     type="natural"
-                    fill="url(#fillAmount)"
-                    fillOpacity={0.4}
-                    stroke="var(--color-amount)"
+                    stroke="hsl(221.2 83.2% 53.3%)"
+                    strokeWidth={2}
+                    dot={false}
                   />
-                </AreaChart>
+                </LineChart>
               </ChartContainer>
             </CardContent>
             </Card>

@@ -4,8 +4,8 @@ import { Pool } from "pg"
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   // Supabase/serverless optimized settings
-  max: 10, // Reduced for serverless
-  idleTimeoutMillis: 20000,
+  max: 5, // Reduced for Supabase pooler
+  idleTimeoutMillis: 10000,
   connectionTimeoutMillis: 10000,
   ssl: {
     rejectUnauthorized: false, // Required for Supabase
@@ -17,9 +17,10 @@ pool.on("connect", () => {
   console.log("Connected to PostgreSQL database")
 })
 
+// Don't crash the server on idle connection errors - just log them
 pool.on("error", (err) => {
-  console.error("Unexpected error on idle client", err)
-  process.exit(-1)
+  console.error("Pool error (non-fatal):", err.message)
+  // Don't exit - let the pool recover
 })
 
 export default pool
