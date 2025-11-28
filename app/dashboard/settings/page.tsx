@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,24 +23,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { Sun, Moon, User, Mail, Loader2, Lock, DollarSign, Trash2, Eye, EyeOff } from "lucide-react"
+import { Sun, Moon, User, Mail, Loader2, Lock, Trash2, Eye, EyeOff } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
 import { toast } from "sonner"
-
-const CURRENCIES = [
-  { value: "USD", label: "US Dollar", symbol: "$" },
-  { value: "EUR", label: "Euro", symbol: "€" },
-  { value: "GBP", label: "British Pound", symbol: "£" },
-  { value: "JPY", label: "Japanese Yen", symbol: "¥" },
-  { value: "CAD", label: "Canadian Dollar", symbol: "C$" },
-  { value: "AUD", label: "Australian Dollar", symbol: "A$" },
-  { value: "INR", label: "Indian Rupee", symbol: "₹" },
-  { value: "CNY", label: "Chinese Yuan", symbol: "¥" },
-  { value: "NGN", label: "Nigerian Naira", symbol: "₦" },
-  { value: "MYR", label: "Malaysian Ringgit", symbol: "RM" },
-]
-
-const CURRENCY_STORAGE_KEY = "expense-tracker-currency"
 
 // Animation variants
 const containerVariants = {
@@ -78,9 +63,6 @@ export default function SettingsPage() {
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [isChangingPassword, setIsChangingPassword] = useState(false)
 
-  // Currency state
-  const [currency, setCurrency] = useState("USD")
-
   // Delete account state
   const [deletePassword, setDeletePassword] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
@@ -91,11 +73,6 @@ export default function SettingsPage() {
     setMounted(true)
     if (user?.name) {
       setName(user.name)
-    }
-    // Load currency from localStorage
-    const savedCurrency = localStorage.getItem(CURRENCY_STORAGE_KEY)
-    if (savedCurrency) {
-      setCurrency(savedCurrency)
     }
   }, [user])
 
@@ -198,12 +175,6 @@ export default function SettingsPage() {
     } finally {
       setIsChangingPassword(false)
     }
-  }
-
-  const handleCurrencyChange = (value: string) => {
-    setCurrency(value)
-    localStorage.setItem(CURRENCY_STORAGE_KEY, value)
-    toast.success(`Currency changed to ${value}`)
   }
 
   const handleDeleteAccount = async () => {
@@ -444,45 +415,6 @@ export default function SettingsPage() {
                   checked={isDark}
                   onCheckedChange={toggleTheme}
                 />
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Currency Section */}
-        <motion.div variants={itemVariants}>
-          <Card>
-            <CardHeader>
-              <CardTitle>Currency</CardTitle>
-              <CardDescription>
-                Set your preferred currency for displaying amounts.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <DollarSign className="h-5 w-5 text-muted-foreground" />
-                  <div>
-                    <Label className="text-base font-medium">
-                      Display Currency
-                    </Label>
-                    <p className="text-sm text-muted-foreground">
-                      Amounts will be shown in this currency.
-                    </p>
-                  </div>
-                </div>
-                <Select value={currency} onValueChange={handleCurrencyChange}>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {CURRENCIES.map((curr) => (
-                      <SelectItem key={curr.value} value={curr.value}>
-                        {curr.symbol} {curr.value} - {curr.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
             </CardContent>
           </Card>

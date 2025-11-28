@@ -260,3 +260,219 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
+[01:19:13.967] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[01:19:13.972] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:19:13.972] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[01:19:13.972] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:19:18.677] Server  LOG      ○ Compiling /dashboard ...
+[01:19:32.881] Server  LOG     Connected to PostgreSQL database
+[01:19:33.012] Server  LOG     Executed query {}
+[01:19:33.156] Server  LOG     Executed query {}
+[01:19:45.567] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[01:19:45.567] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:19:45.567] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[01:19:45.567] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:22:41.825] Server  LOG      ✓ Compiled in 19.1s
+[01:23:14.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:23:18.285] Browser ERROR   uncaughtError: ReferenceError: CURRENCY_STORAGE_KEY is not defined
+[01:23:24.264] Server  LOG      ✓ Compiled in 972ms
+[01:23:27.021] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:23:30.130] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__1ca19dfb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:23:30.139] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__6ae825f0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:23:30.146] Server  ERROR    ⨯ Error: useCurrency must be used within CurrencyProvider
+[01:23:35.198] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:23:38.746] Browser ERROR   uncaughtError: Error: useCurrency must be used within CurrencyProvider
+[01:23:49.284] Server  LOG      ✓ Compiled in 5.4s
+[01:23:50.905] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:23:54.327] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__1ca19dfb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:23:54.423] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__6ae825f0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:23:54.495] Server  ERROR    ⨯ Error: useCurrency must be used within CurrencyProvider
+[01:24:01.315] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:24:03.933] Browser ERROR   uncaughtError: Error: useCurrency must be used within CurrencyProvider
+[01:27:17.389] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__1ca19dfb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:27:17.410] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__6ae825f0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:27:17.426] Server  ERROR    ⨯ Error: useCurrency must be used within CurrencyProvider
+[01:27:22.935] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:27:23.768] Browser ERROR   uncaughtError: Error: useCurrency must be used within CurrencyProvider
+[01:29:08.012] Server  LOG      ✓ Compiled in 13.5s
+[01:29:11.328] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:29:11.343] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:29:17.114] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__df8d75da._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:29:17.400] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\ssr\[root-of-the-server]__6ae825f0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:29:17.643] Server  ERROR    ⨯ Error: useCurrency must be used within CurrencyProvider
+[01:29:25.724] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:26.354] Browser ERROR   uncaughtError: Error: useCurrency must be used within CurrencyProvider
+[01:30:57.271] Server  ERROR    ⨯ ./components/category-breakdown.tsx:4:1
+Module not found: Can't resolve '@/lib/currency-context'
+  2 |
+  3 | import type { Expense } from "@/lib/db-utils"
+> 4 |
+    | ^
+> 5 | interface CategoryBreakdownProps {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 6 |   expenses: Expense[]
+    | ^^^^^^^^^^^^^^^^^
+  7 | }
+  8 |
+  9 | export default function CategoryBreakdown({ expenses }: CategoryBreakdownProps) {
+
+Import map: aliased to relative './lib/currency-context' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/category-breakdown.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/category-breakdown.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:57.370] Server  ERROR    ⨯ ./components/category-breakdown.tsx:4:1
+Module not found: Can't resolve '@/lib/currency-context'
+  2 |
+  3 | import type { Expense } from "@/lib/db-utils"
+> 4 |
+    | ^
+> 5 | interface CategoryBreakdownProps {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 6 |   expenses: Expense[]
+    | ^^^^^^^^^^^^^^^^^
+  7 | }
+  8 |
+  9 | export default function CategoryBreakdown({ expenses }: CategoryBreakdownProps) {
+
+Import map: aliased to relative './lib/currency-context' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/category-breakdown.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/category-breakdown.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:57.527] Server  LOG      ✓ Compiled in 48.8s
+[01:31:00.540] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:31:25.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:42.992] Browser ERROR   ./components/category-breakdown.tsx:4:1
+Module not found: Can't resolve '@/lib/currency-context'
+  2 |
+  3 | import type { Expense } from "@/lib/db-utils"
+> 4 |
+    | ^
+> 5 | interface CategoryBreakdownProps {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 6 |   expenses: Expense[]
+    | ^^^^^^^^^^^^^^^^^
+  7 | }
+  8 |
+  9 | export default function CategoryBreakdown({ expenses }: CategoryBreakdownProps) {
+
+Import map: aliased to relative './lib/currency-context' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./components/category-breakdown.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/category-breakdown.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:31:42.992] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased"
+-                           jf-observer-attached="true"
+                          >
+                  ...
+
+[01:31:46.767] Browser ERROR   ./components/category-breakdown.tsx:4:1
+Module not found: Can't resolve '@/lib/currency-context'
+  2 |
+  3 | import type { Expense } from "@/lib/db-utils"
+> 4 |
+    | ^
+> 5 | interface CategoryBreakdownProps {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 6 |   expenses: Expense[]
+    | ^^^^^^^^^^^^^^^^^
+  7 | }
+  8 |
+  9 | export default function CategoryBreakdown({ expenses }: CategoryBreakdownProps) {
+
+Import map: aliased to relative './lib/currency-context' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./components/category-breakdown.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/category-breakdown.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:35:15.177] Server  LOG      ✓ Compiled in 26.7s

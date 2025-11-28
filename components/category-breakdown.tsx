@@ -31,7 +31,7 @@ export default function CategoryBreakdown({ expenses }: CategoryBreakdownProps) 
               <div className="flex items-center justify-between mb-1">
                 <span className="text-sm font-medium text-text">{category}</span>
                 <span className="text-sm text-text-muted">
-                  ${Number(amount).toFixed(2)} ({percentage.toFixed(1)}%)
+                  ₦{Number(amount).toFixed(2)} ({percentage.toFixed(1)}%)
                 </span>
               </div>
               <div className="w-full bg-border rounded-full h-2">

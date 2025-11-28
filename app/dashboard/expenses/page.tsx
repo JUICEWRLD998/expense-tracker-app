@@ -372,14 +372,14 @@ export default function ExpensesPage() {
           <motion.div variants={itemVariants}>
             <Card className="p-4 h-full">
             <p className="text-xs font-medium text-muted-foreground">Total Spent</p>
-            <p className="text-2xl font-bold mt-1">${totalAmount.toFixed(2)}</p>
+            <p className="text-2xl font-bold mt-1">₦{totalAmount.toFixed(2)}</p>
             <p className="text-xs text-muted-foreground">{filteredExpenses.length} transactions</p>
             </Card>
           </motion.div>
           <motion.div variants={itemVariants}>
             <Card className="p-4 h-full">
             <p className="text-xs font-medium text-muted-foreground">Average</p>
-            <p className="text-2xl font-bold mt-1">${avgAmount.toFixed(2)}</p>
+            <p className="text-2xl font-bold mt-1">₦{avgAmount.toFixed(2)}</p>
             <p className="text-xs text-muted-foreground">Per expense</p>
             </Card>
           </motion.div>
@@ -525,7 +525,7 @@ export default function ExpensesPage() {
                         </Badge>
                       </TableCell>
                       <TableCell className="text-right font-medium">
-                        ${Number(expense.amount).toFixed(2)}
+                        ₦{Number(expense.amount).toFixed(2)}
                       </TableCell>
                       <TableCell className="text-center">
                         <DropdownMenu>

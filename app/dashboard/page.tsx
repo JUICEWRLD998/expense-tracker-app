@@ -276,7 +276,7 @@ export default function DashboardPage() {
                 <DollarSign className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${totalExpenses.toFixed(2)}</div>
+                <div className="text-2xl font-bold">₦{totalExpenses.toFixed(2)}</div>
                 <p className="text-xs text-muted-foreground">All time</p>
               </CardContent>
             </Card>
@@ -289,7 +289,7 @@ export default function DashboardPage() {
                 <TrendingUp className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${thisMonthExpenses.toFixed(2)}</div>
+                <div className="text-2xl font-bold">₦{thisMonthExpenses.toFixed(2)}</div>
                 <p className="text-xs text-muted-foreground">
                   {monthChange >= 0 ? "+" : ""}
                   {monthChange.toFixed(1)}% from last month
@@ -305,7 +305,7 @@ export default function DashboardPage() {
                 <TrendingDown className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${lastMonthExpenses.toFixed(2)}</div>
+                <div className="text-2xl font-bold">₦{lastMonthExpenses.toFixed(2)}</div>
                 <p className="text-xs text-muted-foreground">Previous period</p>
               </CardContent>
             </Card>
@@ -380,7 +380,7 @@ export default function DashboardPage() {
                     Top: {highestCategory.category}
                   </div>
                   <div className="text-muted-foreground leading-none">
-                    ${Number(highestCategory.amount).toFixed(2)}
+                    ₦{Number(highestCategory.amount).toFixed(2)}
                   </div>
                 </>
               )}
@@ -429,7 +429,7 @@ export default function DashboardPage() {
                         <Badge variant="outline">{expense.category}</Badge>
                       </TableCell>
                       <TableCell>{new Date(expense.date).toLocaleDateString()}</TableCell>
-                      <TableCell className="text-right font-medium">${Number(expense.amount).toFixed(2)}</TableCell>
+                      <TableCell className="text-right font-medium">₦{Number(expense.amount).toFixed(2)}</TableCell>
                       <TableCell className="text-center">
                         <div className="flex items-center justify-center gap-2">
                           <Button 

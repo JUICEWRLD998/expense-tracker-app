@@ -316,16 +316,16 @@ export default function BudgetsPage() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Budget</p>
-                  <p className="text-1xl font-bold">${totalBudget.toFixed(2)}</p>
+                  <p className="text-1xl font-bold">₦{totalBudget.toFixed(2)}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Spent</p>
-                  <p className="text-1xl font-bold">${totalSpent.toFixed(2)}</p>
+                  <p className="text-1xl font-bold">₦{totalSpent.toFixed(2)}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Remaining</p>
                   <p className={`text-1xl font-bold ${totalRemaining < 0 ? "text-destructive" : "text-green-500"}`}>
-                    ${totalRemaining.toFixed(2)}
+                    ₦{totalRemaining.toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -393,16 +393,16 @@ export default function BudgetsPage() {
                     <CardContent className="space-y-3">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Budget</span>
-                        <span className="font-medium">${Number(budget.amount).toFixed(2)}</span>
+                        <span className="font-medium">₦{Number(budget.amount).toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Spent</span>
-                        <span className="font-medium">${spent.toFixed(2)}</span>
+                        <span className="font-medium">₦{spent.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Remaining</span>
                         <span className={`font-medium ${remaining < 0 ? "text-destructive" : "text-green-500"}`}>
-                          ${remaining.toFixed(2)}
+                          ₦{remaining.toFixed(2)}
                         </span>
                       </div>
                       <Progress 
