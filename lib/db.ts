@@ -3,10 +3,13 @@ import { Pool } from "pg"
 // Create a PostgreSQL connection pool
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  // Optional: configure connection pool settings
-  max: 20, // Maximum number of clients in the pool
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  // Supabase/serverless optimized settings
+  max: 10, // Reduced for serverless
+  idleTimeoutMillis: 20000,
+  connectionTimeoutMillis: 10000,
+  ssl: {
+    rejectUnauthorized: false, // Required for Supabase
+  },
 })
 
 // Test the connection
