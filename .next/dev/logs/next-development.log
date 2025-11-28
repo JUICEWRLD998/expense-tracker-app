@@ -118,3 +118,21 @@ It can also happen if the client has a browser extension installed which messes 
 
 [00:11:53.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:16:51.001] Server  LOG      ✓ Compiled in 10.5s
+[00:17:59.402] Server  LOG     Connected to PostgreSQL database
+[00:17:59.529] Server  LOG     Executed query {}
+[00:17:59.561] Server  LOG     Executed query {}
+[00:18:41.240] Server  LOG     Connected to PostgreSQL database
+[00:18:41.256] Server  LOG     Executed query {}
+[00:18:41.284] Server  LOG     Executed query {}
+[00:37:13.246] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:37:13.248] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:37:13.248] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:37:13.248] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.

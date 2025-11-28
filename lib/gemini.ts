@@ -2,11 +2,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
-// Using gemini-2.0-flash - Google's latest and fastest model
+// Using gemini-2.0-flash 
 export const geminiModel = genAI.getGenerativeModel({ 
   model: "gemini-2.0-flash",
   generationConfig: {
-    temperature: 0.7,
+    temperature: 0.7, //creativity level
     topP: 0.8,
     topK: 40,
     maxOutputTokens: 2048,
