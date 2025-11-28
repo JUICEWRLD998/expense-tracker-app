@@ -118,10 +118,24 @@ export async function POST(request: NextRequest) {
     const response = result.response.text()
 
     return NextResponse.json({ response })
-  } catch (error) {
+  } catch (error: any) {
     console.error("AI API error:", error)
+    
+    // Provide more specific error messages
+    let errorMessage = "Failed to get AI response"
+    
+    if (error?.message?.includes("API_KEY")) {
+      errorMessage = "Invalid or missing Gemini API key. Please check your configuration."
+    } else if (error?.message?.includes("quota") || error?.message?.includes("429")) {
+      errorMessage = "API rate limit exceeded. Please try again in a moment."
+    } else if (error?.message?.includes("model")) {
+      errorMessage = "Model not available. The AI service may be temporarily unavailable."
+    } else if (error?.status === 403 || error?.message?.includes("403")) {
+      errorMessage = "API access denied. Please verify your Gemini API key has the correct permissions."
+    }
+    
     return NextResponse.json(
-      { error: "Failed to get AI response" },
+      { error: errorMessage },
       { status: 500 }
     )
   }
