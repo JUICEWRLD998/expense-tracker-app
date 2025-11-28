@@ -49,9 +49,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { 
+  Area,
+  AreaChart, 
   CartesianGrid, 
-  Line,
-  LineChart,
   XAxis, 
 } from "recharts"
 import {
@@ -232,7 +232,7 @@ export default function ExpensesPage() {
   const chartConfig = {
     amount: {
       label: "Amount",
-      color: "hsl(221.2 83.2% 53.3%)",
+      color: "var(--chart-1)",
     },
   } satisfies ChartConfig
 
@@ -392,8 +392,13 @@ export default function ExpensesPage() {
               <CardDescription className="text-xs">Daily spending</CardDescription>
             </CardHeader>
             <CardContent className="pb-4">
+              {chartData.length < 2 ? (
+                <div className="flex items-center justify-center h-[120px] text-muted-foreground text-sm">
+                  {chartData.length === 0 ? "No expenses yet" : "Add expenses on different dates to see the trend"}
+                </div>
+              ) : (
               <ChartContainer config={chartConfig} className="h-[120px] w-full">
-                <LineChart
+                <AreaChart
                   accessibilityLayer
                   data={chartData}
                   margin={{ left: 12, right: 12 }}
@@ -404,21 +409,34 @@ export default function ExpensesPage() {
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 6)}
+                    tick={{ fontSize: 10 }}
                   />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent hideLabel />}
-                  />
-                  <Line
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                  <defs>
+                    <linearGradient id="fillAmount" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="5%"
+                        stopColor="#3b82f6"
+                        stopOpacity={0.8}
+                      />
+                      <stop
+                        offset="95%"
+                        stopColor="#3b82f6"
+                        stopOpacity={0.1}
+                      />
+                    </linearGradient>
+                  </defs>
+                  <Area
                     dataKey="amount"
-                    type="natural"
-                    stroke="hsl(221.2 83.2% 53.3%)"
+                    type="monotone"
+                    fill="url(#fillAmount)"
+                    fillOpacity={0.4}
+                    stroke="#3b82f6"
                     strokeWidth={2}
-                    dot={false}
                   />
-                </LineChart>
+                </AreaChart>
               </ChartContainer>
+              )}
             </CardContent>
             </Card>
           </motion.div>

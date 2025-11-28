@@ -1286,6 +1286,10 @@
     min-width: calc(var(--spacing) * 10);
   }
 
+  .min-w-32 {
+    min-width: calc(var(--spacing) * 32);
+  }
+
   .min-w-\[8rem\] {
     min-width: 8rem;
   }
