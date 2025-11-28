@@ -4359,6 +4359,12 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:w-auto {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:max-w-\[425px\] {
       max-width: 425px;
     }
