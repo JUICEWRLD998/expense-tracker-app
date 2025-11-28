@@ -606,3 +606,5 @@ For more information, see https://radix-ui.com/primitives/docs/components/dialog
 [03:21:38.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [03:21:43.422] Server  LOG     Executed query {}
 [03:22:20.233] Server  LOG      ✓ Compiled in 12.5s
+[03:28:37.678] Server  LOG      ✓ Compiled in 21.2s
+[03:29:01.247] Server  LOG      ✓ Compiled in 960ms
