@@ -155,3 +155,5 @@ It can also happen if the client has a browser extension installed which messes 
 [00:34:30.313] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [00:34:30.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [00:35:40.589] Server  LOG      ✓ Compiled in 4.9s
+[01:26:04.382] Server  LOG      ✓ Compiled in 12.8s
+[01:26:40.109] Server  LOG      ✓ Compiled in 2.4s
