@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ChatMessage } from "@/components/chat-message"
-import { Bot, Send, Sparkles, TrendingUp, PiggyBank, BarChart3, Trash2 } from "lucide-react"
+import { Bot, Send, Wallet, TrendingUp, PiggyBank, BarChart3, Trash2 } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
 
 interface Message {
@@ -34,7 +34,7 @@ const SUGGESTED_PROMPTS = [
     prompt: "Based on my spending habits, where can I cut costs and save more money?",
   },
   {
-    icon: Sparkles,
+    icon: Wallet,
     label: "Budget advice",
     prompt: "Can you recommend budget amounts for each category based on my spending patterns?",
   },
