@@ -6,10 +6,9 @@ import { useEffect, useState } from "react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Sun, Moon, Monitor, Check } from "lucide-react"
+import { Switch } from "@/components/ui/switch"
+import { Sun, Moon } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
-import { cn } from "@/lib/utils"
 
 // Animation variants
 const containerVariants = {
@@ -31,29 +30,8 @@ const itemVariants = {
   },
 }
 
-const themeOptions = [
-  {
-    value: "light",
-    label: "Light",
-    icon: Sun,
-    description: "A clean, bright appearance",
-  },
-  {
-    value: "dark",
-    label: "Dark",
-    icon: Moon,
-    description: "Easy on the eyes in low light",
-  },
-  {
-    value: "system",
-    label: "System",
-    icon: Monitor,
-    description: "Matches your device settings",
-  },
-]
-
 export default function SettingsPage() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   // Prevent hydration mismatch
@@ -69,6 +47,12 @@ export default function SettingsPage() {
         </div>
       </DashboardLayout>
     )
+  }
+
+  const isDark = resolvedTheme === "dark"
+
+  const toggleTheme = () => {
+    setTheme(isDark ? "light" : "dark")
   }
 
   return (
@@ -96,46 +80,28 @@ export default function SettingsPage() {
                 Customize how the app looks on your device.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Theme Selection */}
-              <div className="space-y-3">
-                <Label className="text-base">Theme</Label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {themeOptions.map((option) => {
-                    const Icon = option.icon
-                    const isSelected = theme === option.value
-                    
-                    return (
-                      <Button
-                        key={option.value}
-                        variant="outline"
-                        className={cn(
-                          "h-auto flex-col items-start gap-2 p-4 relative",
-                          isSelected && "border-primary bg-primary/5"
-                        )}
-                        onClick={() => setTheme(option.value)}
-                      >
-                        {isSelected && (
-                          <div className="absolute top-2 right-2">
-                            <Check className="h-4 w-4 text-primary" />
-                          </div>
-                        )}
-                        <div className={cn(
-                          "flex h-10 w-10 items-center justify-center rounded-full",
-                          isSelected ? "bg-primary text-primary-foreground" : "bg-muted"
-                        )}>
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div className="text-left">
-                          <p className="font-medium">{option.label}</p>
-                          <p className="text-xs text-muted-foreground font-normal">
-                            {option.description}
-                          </p>
-                        </div>
-                      </Button>
-                    )
-                  })}
+            <CardContent>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  {isDark ? (
+                    <Moon className="h-5 w-5 text-muted-foreground" />
+                  ) : (
+                    <Sun className="h-5 w-5 text-muted-foreground" />
+                  )}
+                  <div>
+                    <Label htmlFor="dark-mode" className="text-base font-medium">
+                      Dark Mode
+                    </Label>
+                    <p className="text-sm text-muted-foreground">
+                      {isDark ? "Dark theme is enabled" : "Light theme is enabled"}
+                    </p>
+                  </div>
                 </div>
+                <Switch
+                  id="dark-mode"
+                  checked={isDark}
+                  onCheckedChange={toggleTheme}
+                />
               </div>
             </CardContent>
           </Card>
