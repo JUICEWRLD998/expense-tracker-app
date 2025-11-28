@@ -1,35 +1,23 @@
-[00:00:14.024] Server  LOG      ✓ Ready in 9.9s
-[00:00:32.562] Server  LOG      ○ Compiling / ...
-[00:01:02.909] Server  WARN     ⚠ Cross origin request detected from 10.67.127.169 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:01:03.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:10.499] Server  LOG      ○ Compiling /login ...
-[00:01:47.581] Server  LOG      ○ Compiling /api/auth/login ...
-[00:01:51.888] Server  LOG     Connected to PostgreSQL database
-[00:01:52.003] Server  LOG     Executed query {}
-[00:02:04.263] Server  LOG     Executed query {}
-[00:02:13.603] Server  LOG     Executed query {}
-[00:02:17.433] Server  LOG      ○ Compiling /dashboard ...
-[00:02:48.161] Server  LOG      ○ Compiling /api/expenses ...
-[00:02:50.868] Server  LOG     Connected to PostgreSQL database
-[00:02:50.954] Server  LOG     Executed query {}
-[00:02:51.267] Server  LOG     Executed query {}
-[00:02:57.164] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:57.164] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:02:57.164] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:57.164] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:02.389] Server  LOG      ○ Compiling /dashboard/budgets ...
-[00:03:10.612] Server  LOG     Executed query {}
-[00:03:10.901] Server  LOG     Executed query {}
-[00:03:11.214] Server  LOG     Executed query {}
-[00:03:11.282] Server  LOG     Executed query {}
-[00:06:56.135] Server  LOG      ✓ Compiled in 14.4s
-[00:07:24.065] Server  LOG      ✓ Compiled in 8.6s
+[00:00:09.553] Server  LOG      ✓ Ready in 5.9s
+[00:01:55.566] Server  LOG      ○ Compiling /dashboard/budgets ...
+[00:02:50.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:57.470] Server  LOG      ○ Compiling /api/budgets ...
+[00:02:58.675] Server  LOG     Connected to PostgreSQL database
+[00:02:58.769] Server  LOG     Executed query {}
+[00:02:59.904] Server  LOG     Executed query {}
+[00:03:41.764] Server  LOG      ○ Compiling /dashboard/ai ...
+[00:04:28.691] Server  LOG      ○ Compiling /api/ai ...
+[00:04:32.455] Server  LOG     Connected to PostgreSQL database
+[00:04:32.528] Server  LOG     Executed query {}
+[00:04:32.595] Server  LOG     Executed query {}
+[00:04:33.558] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\node_modules__pnpm_9df494d2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.593] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__e1b3c1cd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.688] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.720] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.788] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.892] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.941] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.962] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:33.983] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:34.033] Server  ERROR   AI API error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[00:04:34.331] Browser ERROR   Error sending message: {}
