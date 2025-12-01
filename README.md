@@ -11,35 +11,6 @@ A modern expense tracking application built with Next.js, PostgreSQL, and Supaba
 - 🌓 **Dark Mode** - Toggle between light and dark themes
 - 💱 **Currency** - All amounts displayed in Nigerian Naira (₦)
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ installed
-- Supabase account (for database)
-- Google Gemini API key (for AI features)
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-
-3. Set up your `.env.local` file:
-   ```env
-   DATABASE_URL=your_supabase_connection_string
-   JWT_SECRET=your_jwt_secret
-   GEMINI_API_KEY=your_gemini_api_key
-   ```
-
-4. Run the development server:
-   ```bash
-   pnpm dev
-   ```
-
-5. Open [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 

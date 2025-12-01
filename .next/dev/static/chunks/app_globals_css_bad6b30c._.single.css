@@ -1026,14 +1026,6 @@
     height: 120px;
   }
 
-  .h-\[140px\] {
-    height: 140px;
-  }
-
-  .h-\[150px\] {
-    height: 150px;
-  }
-
   .h-\[200px\] {
     height: 200px;
   }
@@ -2603,10 +2595,6 @@
 
   .\[animation-delay\:-0\.15s\] {
     animation-delay: -.15s;
-  }
-
-  .running {
-    animation-play-state: running;
   }
 
   .group-focus-within\/menu-item\:opacity-100:is(:where(.group\/menu-item):focus-within *) {

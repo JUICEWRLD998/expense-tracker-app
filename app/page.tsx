@@ -3,6 +3,7 @@
 import { useAuth } from "@/lib/auth-context"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { Spinner } from "@/components/ui/spinner"
 
 export default function Home() {
   const { user, loading } = useAuth()
@@ -19,10 +20,8 @@ export default function Home() {
   }, [user, loading, router])
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-surface">
-      <div className="text-center">
-        <div className="animate-pulse text-text-muted">Loading...</div>
-      </div>
+    <div className="flex items-center justify-center min-h-screen bg-background">
+      <Spinner className="h-8 w-8" />
     </div>
   )
 }
