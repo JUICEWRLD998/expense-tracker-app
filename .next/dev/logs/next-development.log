@@ -89,3 +89,15 @@ It can also happen if the client has a browser extension installed which messes 
 [00:08:07.270] Server  LOG     Executed query {}
 [00:08:12.986] Server  LOG     Executed query {}
 [00:08:13.241] Server  LOG     Executed query {}
+[00:08:23.431] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
+[00:09:14.078] Server  LOG     Connected to PostgreSQL database
+[00:09:14.270] Server  LOG     Executed query {}
+[00:09:14.670] Server  LOG     Executed query {}
+[00:09:22.232] Server  LOG     Executed query {}
+[00:09:22.464] Server  LOG     Executed query {}
+[00:09:28.067] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:28.067] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:32.654] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
+[00:09:35.522] Server  LOG      ○ Compiling /dashboard/settings ...
+[00:17:10.906] Server  LOG      ✓ Compiled in 10.8s
+[00:18:59.400] Server  LOG      ✓ Compiled in 2.7s
