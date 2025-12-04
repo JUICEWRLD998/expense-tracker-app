@@ -1,103 +1,62 @@
-[00:00:08.505] Server  LOG      ✓ Ready in 6.3s
-[00:00:53.804] Server  LOG      ○ Compiling / ...
-[00:01:21.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:22.009] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:12.064] Server  LOG      ✓ Ready in 9.3s
+[00:00:30.612] Server  LOG      ○ Compiling /login ...
+[00:01:15.462] Server  WARN     ⚠ Cross origin request detected from 10.67.127.169 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:01:15.696] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:42.601] Server  LOG     Connected to PostgreSQL database
+[00:01:42.842] Server  LOG     Executed query {}
+[00:01:46.297] Server  LOG      ○ Compiling /dashboard ...
+[00:01:53.124] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
+[00:02:01.746] Server  LOG     Connected to PostgreSQL database
+[00:02:02.076] Server  LOG     Executed query {}
+[00:02:02.395] Server  LOG     Executed query {}
+[00:02:06.918] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:02:06.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:02:06.918] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-%s%s https://react.dev/link/hydration-mismatch 
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en" suppressHydrationWarning={true}>
-                          <body
-                            className="font-sans antialiased"
--                           jf-observer-attached="true"
-                          >
-                  ...
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:02:06.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:02:11.368] Server  LOG      ○ Compiling /dashboard/expenses ...
+[00:02:12.734] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
+[00:02:14.140] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-[00:01:29.050] Server  LOG      ○ Compiling /dashboard ...
-[00:01:55.505] Server  LOG      ○ Compiling /api/expenses ...
-[00:01:58.539] Server  LOG     Connected to PostgreSQL database
-[00:01:58.761] Server  LOG     Executed query {}
-[00:01:59.021] Server  LOG     Executed query {}
-[00:05:56.102] Server  LOG      ✓ Compiled in 32.1s
-[00:06:10.717] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:11.176] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:02:14.140] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:02:14.140] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-%s%s https://react.dev/link/hydration-mismatch 
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:02:14.140] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:02:17.919] Server  LOG     Connected to PostgreSQL database
+[00:02:18.126] Server  LOG     Executed query {}
+[00:02:18.575] Server  LOG     Executed query {}
+[00:03:12.415] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:12.426] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:42.711] Server  LOG     Connected to PostgreSQL database
+[00:03:43.042] Server  LOG     Executed query {}
+[00:03:43.434] Server  LOG     Executed query {}
+[00:03:53.675] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
+[00:04:00.944] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/dashboard" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en" suppressHydrationWarning={true}>
-                          <body
-                            className="font-sans antialiased"
--                           jf-observer-attached="true"
-                          >
-                  ...
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-[00:06:16.876] Server  LOG     Connected to PostgreSQL database
-[00:06:17.108] Server  LOG     Executed query {}
-[00:06:47.698] Server  LOG      ○ Compiling /dashboard/budgets ...
-[00:08:04.594] Server  LOG      ○ Compiling /api/budgets ...
-[00:08:06.566] Server  LOG     Connected to PostgreSQL database
-[00:08:06.804] Server  LOG     Executed query {}
-[00:08:07.270] Server  LOG     Executed query {}
-[00:08:12.986] Server  LOG     Executed query {}
-[00:08:13.241] Server  LOG     Executed query {}
-[00:08:23.431] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
-[00:09:14.078] Server  LOG     Connected to PostgreSQL database
-[00:09:14.270] Server  LOG     Executed query {}
-[00:09:14.670] Server  LOG     Executed query {}
-[00:09:22.232] Server  LOG     Executed query {}
-[00:09:22.464] Server  LOG     Executed query {}
-[00:09:28.067] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:09:28.067] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:09:32.654] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
-[00:09:35.522] Server  LOG      ○ Compiling /dashboard/settings ...
-[00:17:10.906] Server  LOG      ✓ Compiled in 10.8s
-[00:18:59.400] Server  LOG      ✓ Compiled in 2.7s
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:04:00.944] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:00.945] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:04:00.945] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:04.771] Server  LOG     Connected to PostgreSQL database
+[00:04:05.046] Server  LOG     Executed query {}
+[00:04:05.325] Server  LOG     Executed query {}

@@ -1,8 +1,7 @@
 {
-  "/api/budgets/route": "app/api/budgets/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
   "/api/expenses/route": "app/api/expenses/route.js",
-  "/dashboard/budgets/page": "app/dashboard/budgets/page.js",
+  "/dashboard/expenses/page": "app/dashboard/expenses/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/settings/page": "app/dashboard/settings/page.js",
-  "/page": "app/page.js"
+  "/login/page": "app/login/page.js"
 }

@@ -74,9 +74,9 @@ export function DashboardNavbar() {
             <DropdownMenuLabel>Notifications</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <div className="p-2 text-sm text-muted-foreground">
-              <p className="py-2">New expense added: $45.00</p>
-              <p className="py-2">Budget limit reached for Food category</p>
-              <p className="py-2">Monthly report is ready</p>
+              <p className="py-2">Demo</p>
+              <p className="py-2">Demo</p>
+              <p className="py-2">Demo</p>
             </div>
           </DropdownMenuContent>
         </DropdownMenu>

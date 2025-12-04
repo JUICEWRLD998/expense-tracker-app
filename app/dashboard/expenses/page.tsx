@@ -49,8 +49,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { 
-  Area,
-  AreaChart, 
+  Line,
+  LineChart, 
   CartesianGrid, 
   XAxis, 
 } from "recharts"
@@ -398,7 +398,7 @@ export default function ExpensesPage() {
                 </div>
               ) : (
               <ChartContainer config={chartConfig} className="h-[120px] w-full">
-                <AreaChart
+                <LineChart
                   accessibilityLayer
                   data={chartData}
                   margin={{ left: 12, right: 12 }}
@@ -409,32 +409,17 @@ export default function ExpensesPage() {
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tick={{ fontSize: 10 }}
+                    tickFormatter={(value) => value.slice(0, 3)}
                   />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-                  <defs>
-                    <linearGradient id="fillAmount" x1="0" y1="0" x2="0" y2="1">
-                      <stop
-                        offset="5%"
-                        stopColor="#3b82f6"
-                        stopOpacity={0.8}
-                      />
-                      <stop
-                        offset="95%"
-                        stopColor="#3b82f6"
-                        stopOpacity={0.1}
-                      />
-                    </linearGradient>
-                  </defs>
-                  <Area
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+                  <Line
                     dataKey="amount"
-                    type="monotone"
-                    fill="url(#fillAmount)"
-                    fillOpacity={0.4}
-                    stroke="#3b82f6"
+                    type="linear"
+                    stroke="var(--color-amount)"
                     strokeWidth={2}
+                    dot={false}
                   />
-                </AreaChart>
+                </LineChart>
               </ChartContainer>
               )}
             </CardContent>
