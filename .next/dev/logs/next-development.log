@@ -1,62 +1,24 @@
-[00:00:12.064] Server  LOG      ✓ Ready in 9.3s
-[00:00:30.612] Server  LOG      ○ Compiling /login ...
-[00:01:15.462] Server  WARN     ⚠ Cross origin request detected from 10.67.127.169 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:01:15.696] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:42.601] Server  LOG     Connected to PostgreSQL database
-[00:01:42.842] Server  LOG     Executed query {}
-[00:01:46.297] Server  LOG      ○ Compiling /dashboard ...
-[00:01:53.124] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
-[00:02:01.746] Server  LOG     Connected to PostgreSQL database
-[00:02:02.076] Server  LOG     Executed query {}
-[00:02:02.395] Server  LOG     Executed query {}
-[00:02:06.918] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:06.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:02:06.918] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:06.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:02:11.368] Server  LOG      ○ Compiling /dashboard/expenses ...
-[00:02:12.734] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
-[00:02:14.140] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:14.140] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:02:14.140] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:02:14.140] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:02:17.919] Server  LOG     Connected to PostgreSQL database
-[00:02:18.126] Server  LOG     Executed query {}
-[00:02:18.575] Server  LOG     Executed query {}
-[00:03:12.415] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:12.426] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:42.711] Server  LOG     Connected to PostgreSQL database
-[00:03:43.042] Server  LOG     Executed query {}
-[00:03:43.434] Server  LOG     Executed query {}
-[00:03:53.675] Server  ERROR   Pool error (non-fatal): "{:shutdown, :db_termination}"
-[00:04:00.944] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:04:00.944] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:00.945] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
-
-If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/dialog
-[00:04:00.945] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:04.771] Server  LOG     Connected to PostgreSQL database
-[00:04:05.046] Server  LOG     Executed query {}
-[00:04:05.325] Server  LOG     Executed query {}
+[00:00:16.457] Server  LOG      ✓ Ready in 12.8s
+[00:03:15.115] Server  LOG      ○ Compiling / ...
+[00:03:36.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:43.397] Server  LOG      ○ Compiling /dashboard ...
+[00:04:08.506] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:08.679] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:08.710] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:08.816] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
+[00:04:09.080] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:09.105] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:09.172] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:09.316] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
+[00:05:11.051] Server  LOG      ○ Compiling /dashboard/ai ...
+[00:05:55.891] Server  LOG      ○ Compiling /dashboard/settings ...
+[00:07:20.371] Server  LOG      ○ Compiling /dashboard/expenses ...
+[00:08:14.806] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.827] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.831] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.850] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
+[00:08:14.934] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\.next\dev\server\chunks\[root-of-the-server]__9835226f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.942] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.947] Server  ERROR   C:\Users\fadhm\OneDrive\Desktop\expense-tracker-app\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:14.955] Server  ERROR   Error fetching expenses: Error: Invalid or expired token
+[00:14:39.752] Server  LOG      ✓ Compiled in 9.9s

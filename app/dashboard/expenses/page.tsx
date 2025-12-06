@@ -232,7 +232,7 @@ export default function ExpensesPage() {
   const chartConfig = {
     amount: {
       label: "Amount",
-      color: "var(--chart-1)",
+      color: "#f97316",
     },
   } satisfies ChartConfig
 
@@ -415,7 +415,7 @@ export default function ExpensesPage() {
                   <Line
                     dataKey="amount"
                     type="linear"
-                    stroke="var(--color-amount)"
+                    stroke="#f97316"
                     strokeWidth={2}
                     dot={false}
                   />
