@@ -24,14 +24,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
-  // Load user and token from localStorage on mount with delay
+  // Load user and token from localStorage on mount
   useEffect(() => {
     const checkAuth = async () => {
       const token = localStorage.getItem("auth_token")
       const storedUser = localStorage.getItem("auth_user")
-      
-      // Add 4-second delay before showing login/signup pages
-      await new Promise((resolve) => setTimeout(resolve, 4000))
       
       if (token && storedUser) {
         setUser(JSON.parse(storedUser))
