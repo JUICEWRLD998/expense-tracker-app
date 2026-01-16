@@ -123,20 +123,26 @@ export async function POST(request: NextRequest) {
     
     // Provide more specific error messages
     let errorMessage = "Failed to get AI response"
+    let statusCode = 500
     
-    if (error?.message?.includes("API_KEY")) {
+    // Check for rate limiting (429)
+    if (error?.status === 429 || error?.message?.includes("429") || error?.message?.includes("quota") || error?.message?.includes("Too Many Requests")) {
+      errorMessage = "You've reached the API rate limit. Please wait a minute and try again. Consider upgrading your Gemini API plan for higher limits."
+      statusCode = 429
+    } else if (error?.message?.includes("API_KEY") || error?.status === 400) {
       errorMessage = "Invalid or missing Gemini API key. Please check your configuration."
-    } else if (error?.message?.includes("quota") || error?.message?.includes("429")) {
-      errorMessage = "API rate limit exceeded. Please try again in a moment."
+      statusCode = 500
     } else if (error?.message?.includes("model")) {
       errorMessage = "Model not available. The AI service may be temporarily unavailable."
+      statusCode = 503
     } else if (error?.status === 403 || error?.message?.includes("403")) {
       errorMessage = "API access denied. Please verify your Gemini API key has the correct permissions."
+      statusCode = 403
     }
     
     return NextResponse.json(
       { error: errorMessage },
-      { status: 500 }
+      { status: statusCode }
     )
   }
 }

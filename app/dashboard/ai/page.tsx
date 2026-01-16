@@ -128,13 +128,31 @@ export default function AIAssistantPage() {
       }
 
       const data = await response.json()
+      
+      // Check for specific errors
+      if (data.error) {
+        throw new Error(data.error)
+      }
+      
       const assistantMessage: Message = { role: "assistant", content: data.response }
       setMessages((prev) => [...prev, assistantMessage])
     } catch (error) {
       console.error("Error sending message:", error)
+      
+      // Provide more specific error messages
+      let errorContent = "Sorry, I encountered an error. Please try again."
+      
+      if (error instanceof Error) {
+        if (error.message.includes("token") || error.message.includes("Unauthorized")) {
+          errorContent = "Your session has expired. Please log out and log back in to continue using the AI assistant."
+        } else if (error.message.includes("API") || error.message.includes("Gemini")) {
+          errorContent = "Sorry, there was an issue with the AI service. Please make sure your Gemini API key is configured correctly and try again."
+        }
+      }
+      
       const errorMessage: Message = {
         role: "assistant",
-        content: "Sorry, I encountered an error. Please make sure your Gemini API key is configured correctly and try again.",
+        content: errorContent,
       }
       setMessages((prev) => [...prev, errorMessage])
     } finally {
