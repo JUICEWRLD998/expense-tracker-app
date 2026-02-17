@@ -29,9 +29,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const checkAuth = async () => {
       const token = localStorage.getItem("auth_token")
       const storedUser = localStorage.getItem("auth_user")
-      
+
       if (token && storedUser) {
-        setUser(JSON.parse(storedUser))
+        // Decode JWT payload and check expiry without a library
+        try {
+          const payload = JSON.parse(atob(token.split(".")[1]))
+          const isExpired = payload.exp && Date.now() / 1000 > payload.exp
+          if (isExpired) {
+            // Token expired — clear storage so user is redirected to login
+            localStorage.removeItem("auth_token")
+            localStorage.removeItem("auth_user")
+          } else {
+            setUser(JSON.parse(storedUser))
+          }
+        } catch {
+          // Malformed token — clear it
+          localStorage.removeItem("auth_token")
+          localStorage.removeItem("auth_user")
+        }
       }
       setLoading(false)
     }
